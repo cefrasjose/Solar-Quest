@@ -164,7 +164,7 @@ solar-quest/
 ### 🔧 **Instalação Local**
 ```bash
 # Clone o repositório
-git clone https://github.com/SEU-USUARIO/solar-quest.git
+git clone https://github.com/cefrasjose/solar-quest.git
 
 # Entre na pasta
 cd solar-quest
@@ -227,7 +227,7 @@ npx serve -s build
 <table>
   <tr>
     <td align="center">
-      <strong>👨‍🎓 Alunos - 3° "G" EREMWAL 2025</strong><br>
+      <strong>👨‍🎓 Alunos - 3° "G" 2025 EREMWAL</strong><br>
       <strong>Lucas Nadson</strong><br>
       <strong>Mariana Vitória</strong><br>
       <strong>Rikelmy</strong><br>
@@ -242,9 +242,9 @@ npx serve -s build
       <strong>👨‍💻 Colaboradores</strong><br>
       <strong>Cefras Mandú</strong><br>
       <strong>Robson Luan</strong><br>
-      <em>Eng. de Computação IFPB</em><br>
+      <em>Eng. de Computação IFPB-CG</em><br>
       <strong>Francisco Ferreira</strong><br>
-      <em>Sistemas de Informação UniFAP</em><br>
+      <em>S.I UNIFAP-CE</em><br>
       <em>Desenvolvimento técnico</em>
     </td>
   </tr>
