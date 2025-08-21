@@ -3,7 +3,7 @@
 Jogo educativo sobre energia sustentável e impacto ambiental no sertão nordestino.
 
 ## 🎮 Como Jogar
-- Acesse: [https://SEU-USUARIO.github.io/solar-quest](https://SEU-USUARIO.github.io/solar-quest)
+- Acesse: [https://solar-quest.vercel.app](https://solar-quest.vercel.app)
 - Digite seu nome e comece a aventura
 - Faça escolhas que impactam a narrativa
 - Descubra múltiplos finais baseados em suas decisões
@@ -15,9 +15,9 @@ Jogo educativo sobre energia sustentável e impacto ambiental no sertão nordest
 - Lucide React (ícones)
 
 ## 👥 Créditos
-- **Orientador:** Renato
-- **Alunos:** Mariana Carvalho, Lucas Nadson, Rikelme – EREMWAL  
-- **Colaborador:** Cefras Mandú – Eng. de Computação IFPB
+- **Orientador:** Renato Nunes Ramalho 
+- **Alunos:** Lucas Nadisson, Mariana Vitória e Rikelmy- 3º ano “G” 2025 EREMWAL  
+- **Colaborador:** Cefras Mandú, Robson Luan – Eng. de Computação IFPB - CG, Francisco Ferreira - UniFAP - CE
 
 ## 🚀 Deploy
-Hospedado automaticamente via GitHub Pages
+Hospedado no Vercel

@@ -219,8 +219,9 @@ const storyData = {
     title: 'Solar Quest - Créditos',
     content: {
       orientador: 'Renato',
-      alunos: 'Mariana Carvalho, Lucas Nadson, Rikelme – EREMWAL',
-      colaborador: 'Cefras Mandú – Eng. de Computação IFPB'
+      alunos: 'Lucas Nadson, Mariana Vitória, Rikelmy – 3º ano "G" EREMWAL',
+      colaborador: 'Cefras Mandú, Robson Luan – Eng. de Computação IFPB - CG',
+      colaborador: 'Francisco Ferreira - UniFAP - CE'
     }
   }
 };
