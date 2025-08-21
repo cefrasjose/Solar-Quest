@@ -11,7 +11,7 @@
   [![React](https://img.shields.io/badge/React-18+-blue?style=flat-square&logo=react)](https://reactjs.org/)
   [![Tailwind](https://img.shields.io/badge/Tailwind-3+-06B6D4?style=flat-square&logo=tailwindcss)](https://tailwindcss.com/)
   
-  ### [🎮 JOGAR AGORA](https://SEU-USUARIO.github.io/solar-quest)
+  ### [🎮 JOGAR AGORA](https://solar-quest.vercel.app)
   
 </div>
 
