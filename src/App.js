@@ -220,8 +220,10 @@ const storyData = {
     content: {
       orientador: 'Renato',
       alunos: 'Lucas Nadson, Mariana Vitória, Rikelmy – 3 ano "G" EREMWAL',
-      colaborador: 'Cefras Mandú, Robson Luan – Eng. de Computação IFPB - CG',
-      colaborador: 'Francisco Ferreira - UniFAP - CE'
+      colaboradores: [
+        'Cefras Mandú, Robson Luan – Eng. de Computação IFPB - CG',
+        'Francisco Ferreira - UniFAP - CE'
+      ]
     }
   }
 };
@@ -567,8 +569,20 @@ const SolarQuest = () => {
                       transition={{ delay: 0.9 }}
                       className="bg-gradient-to-r from-purple-100 to-blue-100 p-6 rounded-xl"
                     >
-                      <h3 className="font-bold text-xl mb-2">Colaborador</h3>
-                      <p>{scene.content.colaborador}</p>
+                      <h3 className="font-bold text-xl mb-2">Colaboradores</h3>
+                      <div className="space-y-2">
+                        {scene.content.colaboradores.map((colaborador, index) => (
+                          <motion.p 
+                            key={index}
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 1.1 + index * 0.2 }}
+                            className="text-gray-700"
+                          >
+                            {colaborador}
+                          </motion.p>
+                        ))}
+                      </div>
                     </motion.div>
                   </div>
 
