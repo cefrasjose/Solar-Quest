@@ -6,7 +6,7 @@
   
   **Um jogo interativo sobre energia sustentável e impacto ambiental no sertão nordestino**
   
-  [![Deploy Status](https://solar-quest.vercel.app)](https://solar-quest.vercel.app)
+  [![Deploy Status](https://img.shields.io/github/deployments/SEU-USUARIO/solar-quest/github-pages?style=flat-square&label=Deploy)](https://SEU-USUARIO.github.io/solar-quest)
   [![License](https://img.shields.io/github/license/SEU-USUARIO/solar-quest?style=flat-square)](LICENSE)
   [![React](https://img.shields.io/badge/React-18+-blue?style=flat-square&logo=react)](https://reactjs.org/)
   [![Tailwind](https://img.shields.io/badge/Tailwind-3+-06B6D4?style=flat-square&logo=tailwindcss)](https://tailwindcss.com/)
@@ -282,7 +282,7 @@ Copyright (c) 2024 Equipe Solar Quest EREMWAL
 
 ## 🌐 Links Úteis
 
-- 🎮 **Jogo Online**: [https://SEU-USUARIO.github.io/solar-quest](https://SEU-USUARIO.github.io/solar-quest)
+- 🎮 **Jogo Online**: [https://solar-quest.vercel.app](https://solar-quest.vercel.app)
 - 📊 **Repositório**: [https://github.com/SEU-USUARIO/solar-quest](https://github.com/SEU-USUARIO/solar-quest)
 - 🚀 **Deploy Status**: [GitHub Actions](https://github.com/SEU-USUARIO/solar-quest/actions)
 - 📝 **Issues**: [Reportar Problemas](https://github.com/SEU-USUARIO/solar-quest/issues)
