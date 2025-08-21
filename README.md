@@ -7,7 +7,7 @@
   **Um jogo interativo sobre energia sustentável e impacto ambiental no sertão nordestino**
   
   [![Deploy Status](https://vercel.com/cefras54-1783s-projects/solar-quest)](https://solar-quest.vercel.app)
-  [![License](https://img.shields.io/github/license/SEU-USUARIO/solar-quest?style=flat-square)](LICENSE)
+  [![License](https://img.shields.io/github/license/cefrasjose/solar-quest?style=flat-square)](LICENSE)
   [![React](https://img.shields.io/badge/React-18+-blue?style=flat-square&logo=react)](https://reactjs.org/)
   [![Tailwind](https://img.shields.io/badge/Tailwind-3+-06B6D4?style=flat-square&logo=tailwindcss)](https://tailwindcss.com/)
   
@@ -241,7 +241,7 @@ npx serve -s build
       <strong>👨‍💻 Colaboradores</strong><br>
       <strong>Cefras Mandú</strong><br>
       <strong>Robson Luan</strong><br>
-      <em>Eng. de Computação IFPB</em><br>
+      <em>Eng. de Computação IFPB-CG</em><br>
       <strong>Francisco Ferreira</strong><br>
       <em>Sistemas de Informação UNIFAP-CE</em><br>
       <em>Desenvolvimento técnico</em>
