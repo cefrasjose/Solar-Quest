@@ -6,7 +6,7 @@
   
   **Um jogo interativo sobre energia sustentável e impacto ambiental no sertão nordestino**
   
-  [![Deploy Status](https://img.shields.io/github/deployments/SEU-USUARIO/solar-quest/github-pages?style=flat-square&label=Deploy)](https://SEU-USUARIO.github.io/solar-quest)
+  [![Deploy Status](https://vercel.com/cefras54-1783s-projects/solar-quest)](https://solar-quest.vercel.app)
   [![License](https://img.shields.io/github/license/SEU-USUARIO/solar-quest?style=flat-square)](LICENSE)
   [![React](https://img.shields.io/badge/React-18+-blue?style=flat-square&logo=react)](https://reactjs.org/)
   [![Tailwind](https://img.shields.io/badge/Tailwind-3+-06B6D4?style=flat-square&logo=tailwindcss)](https://tailwindcss.com/)
@@ -51,7 +51,7 @@ O jogo apresenta uma narrativa ramificada onde o jogador toma decisões crítica
 ## 🕹️ Como Jogar
 
 ### 🚀 **Acesso Online**
-1. **Visite**: [https://SEU-USUARIO.github.io/solar-quest](https://SEU-USUARIO.github.io/solar-quest)
+1. **Visite**: [https://solar-quest.vercel.app](https://solar-quest.vercel.app)
 2. **Digite seu nome** para personalizar a experiência
 3. **Escolha seu gênero** para definir a narrativa inicial
 4. **Tome decisões** que moldarão sua jornada
@@ -115,8 +115,6 @@ solar-quest/
 │   ├── 📄 App.js              # Componente principal do jogo
 │   ├── 📄 index.js            # Entry point React
 │   └── 📄 index.css           # Estilos globais
-├── 📂 .github/workflows/
-│   └── 📄 deploy.yml          # Configuração do deploy
 ├── 📄 package.json            # Dependências do projeto
 ├── 📄 README.md              # Documentação
 └── 📄 LICENSE                # Licença do projeto
@@ -200,7 +198,7 @@ npx serve -s build
 5. 🔄 **Abra um Pull Request**
 
 ### 🐛 **Reportar Bugs**
-- Use as [Issues do GitHub](https://github.com/SEU-USUARIO/solar-quest/issues)
+- Use as [Issues do GitHub](https://github.com/cefrasjose/solar-quest/issues)
 - Descreva o problema detalhadamente
 - Inclua steps para reproduzir
 - Adicione screenshots se necessário
@@ -286,10 +284,10 @@ Copyright (c) 2024 Equipe Solar Quest EREMWAL
 ## 🌐 Links Úteis
 
 - 🎮 **Jogo Online**: [https://solar-quest.vercel.app](https://solar-quest.vercel.app)
-- 📊 **Repositório**: [https://github.com/SEU-USUARIO/solar-quest](https://github.com/SEU-USUARIO/solar-quest)
-- 🚀 **Deploy Status**: [GitHub Actions](https://github.com/SEU-USUARIO/solar-quest/actions)
-- 📝 **Issues**: [Reportar Problemas](https://github.com/SEU-USUARIO/solar-quest/issues)
-- 💬 **Discussões**: [GitHub Discussions](https://github.com/SEU-USUARIO/solar-quest/discussions)
+- 📊 **Repositório**: [https://github.com/cefrasjose/solar-quest](https://github.com/cefrasjose/solar-quest)
+- 🚀 **Deploy Status**: [Vercel](https://vercel.com/cefras54-1783s-projects/solar-quest)
+- 📝 **Issues**: [Reportar Problemas](https://github.com/cefrasjose/solar-quest/issues)
+- 💬 **Discussões**: [GitHub Discussions](https://github.com/cefrasjose/solar-quest/discussions)
 
 ---
 
@@ -297,15 +295,16 @@ Copyright (c) 2024 Equipe Solar Quest EREMWAL
 
 Para dúvidas acadêmicas ou colaborações:
 
-- 📧 **Email institucional**: [contato@eremwal.edu.br](mailto:contato@eremwal.edu.br)
-- 🏫 **EREMWAL** - Escola de Referência em Ensino Médio
-- 🎓 **IFPB** - Instituto Federal da Paraíba
+- 📧 **Email institucional**: [cefras.jose@academico.ifpb.edu.br](mailto:cefras.jose@academico.ifpb.edu.br)
+- 🏫 **EREMWAL** - Escola de Referência em Ensino Médio Dr. Walmy Campos Bezerra
+- 🎓 **IFPB** - Instituto Federal da Paraíba Campus Campina Grande
+- 🎓 **UNIFAP** - Centro Universitário Paraíso
 
 ---
 
 <div align="center">
   
-  ### 🌱 Feito com 💚 pela equipe EREMWAL
+  ### 🌱 Feito com 💚 pela equipe EREMWAL e colaboração dos estudantes do IFPB-CG e UNIFAP-CE
   
   **"Construir um futuro exige mais do que luz, exige consciência."**
   
