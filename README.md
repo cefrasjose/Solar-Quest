@@ -7,7 +7,7 @@
   **Um jogo interativo sobre energia sustentável e impacto ambiental no sertão nordestino**
   
   [![Vercel Status](https://vercelbadge.vercel.app/api/SEU-USUARIO/solar-quest)](https://solar-quest.vercel.app/)
-  [![Deploy Status](https://img.shields.io/github/deployments/SEU-USUARIO/solar-quest/github-pages?style=flat-square&label=Deploy)](https://vercel.com/cefras54-1783s-projects/solar-quest)
+  [![Deploy Status](https://img.shields.io/github/deployments/SEU-USUARIO/solar-quest/github-pages?style=flat-square&label=Deploy)](https://vercel.com/cefras54-1783s-projects)
   [![License](https://img.shields.io/github/license/cefrasjose/solar-quest?style=flat-square)](LICENSE)
   [![React](https://img.shields.io/badge/React-18+-blue?style=flat-square&logo=react)](https://reactjs.org/)
   [![Tailwind](https://img.shields.io/badge/Tailwind-3+-06B6D4?style=flat-square&logo=tailwindcss)](https://tailwindcss.com/)
@@ -30,6 +30,21 @@ O jogo apresenta uma narrativa ramificada onde o jogador toma decisões crítica
 - ⚖️ **Ética empresarial e responsabilidade**
 - 🔄 **Consequências de decisões técnicas**
 - 💡 **Educação sobre energia renovável**
+
+---
+
+## 📸 Prints do Jogo
+
+<p align="center">
+  <img src="./screenshots/Captura de tela 2025-08-21 042045.png" alt="Tela Inicial" width="45%"/>
+  <img src="./screenshots/Captura de tela 2025-08-21 042711.png" alt="Sistema de Escolhas" width="45%"/>
+  <img src="./screenshots/Captura de tela 2025-08-21 042740.png" alt="Sistema de Escolhas" width="45%"/>
+  <img src="./screenshots/Captura de tela 2025-08-21 042759.png" alt="Sistema de Escolhas" width="45%"/>
+</p>
+
+<p align="center">
+  <img src="./screenshots/Captura de tela 2025-08-21 042807.png" alt="Final do Jogo" width="70%"/>
+</p>
 
 ---
 
