@@ -243,7 +243,7 @@ npx serve -s build
       <strong>Robson Luan</strong><br>
       <em>Eng. de Computação IFPB</em><br>
       <strong>Francisco Ferreira</strong><br>
-      <em>Sistema de Informação UNIFAP-CE</em><br>
+      <em>Sistemas de Informação UNIFAP-CE</em><br>
       <em>Desenvolvimento técnico</em>
     </td>
   </tr>
