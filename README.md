@@ -6,7 +6,7 @@
   
   **Um jogo interativo sobre energia sustentável e impacto ambiental no sertão nordestino**
   
-  [![Deploy Status](https://img.shields.io/github/deployments/SEU-USUARIO/solar-quest/github-pages?style=flat-square&label=Deploy)](https://SEU-USUARIO.github.io/solar-quest)
+  [![Deploy Status](https://img.shields.io/github/deployments/SEU-USUARIO/solar-quest/github-pages?style=flat-square&label=Deploy)](https://solar-quest.vercel.app)
   [![License](https://img.shields.io/github/license/SEU-USUARIO/solar-quest?style=flat-square)](LICENSE)
   [![React](https://img.shields.io/badge/React-18+-blue?style=flat-square&logo=react)](https://reactjs.org/)
   [![Tailwind](https://img.shields.io/badge/Tailwind-3+-06B6D4?style=flat-square&logo=tailwindcss)](https://tailwindcss.com/)
