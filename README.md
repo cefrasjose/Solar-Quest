@@ -218,8 +218,8 @@ npx serve -s build
 <table>
   <tr>
     <td align="center">
-      <strong>🎓 Orientador</strong><br>
-      <strong>Renato</strong><br>
+      <strong>🎓 Professor Orientador</strong><br>
+      <strong>Renato Nunes Ramalho</strong><br>
       <em>Orientação acadêmica</em>
     </td>
   </tr>
@@ -228,10 +228,10 @@ npx serve -s build
 <table>
   <tr>
     <td align="center">
-      <strong>👨‍🎓 Alunos - EREMWAL</strong><br>
-      <strong>Mariana Carvalho</strong><br>
+      <strong>👨‍🎓 Alunos 3º ano "G"- EREMWAL</strong><br>
       <strong>Lucas Nadson</strong><br>
-      <strong>Rikelme</strong><br>
+      <strong>Mariana Vitória</strong><br>
+      <strong>Rikelmy</strong><br>
       <em>Desenvolvimento e pesquisa</em>
     </td>
   </tr>
@@ -240,9 +240,12 @@ npx serve -s build
 <table>
   <tr>
     <td align="center">
-      <strong>👨‍💻 Colaborador</strong><br>
+      <strong>👨‍💻 Colaboradores</strong><br>
       <strong>Cefras Mandú</strong><br>
+      <strong>Robson Luan</strong><br>
       <em>Eng. de Computação IFPB</em><br>
+      <strong>Francisco Ferreira</strong><br>
+      <em>Sistema de Informação UNIFAP-CE</em><br>
       <em>Desenvolvimento técnico</em>
     </td>
   </tr>
