@@ -321,8 +321,7 @@ Para dúvidas acadêmicas ou colaborações:
 <div align="center">
   
   ### 🌱 Feito com 💚 pela equipe EREMWAL e colaboração dos estudantes do IFPB-CG e UniFAP-CE
-
-- [@cefrasjose](https://github.com/cefrasjose) - [@robsonluan95](https://github.com/robsonluan95) 
+[@cefrasjose](https://github.com/cefrasjose) [@robsonluan95](https://github.com/robsonluan95) 
   
   **"Construir um futuro exige mais do que luz, exige consciência."**
   
