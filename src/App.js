@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Sun, Leaf, Zap, Mountain, Users, Home, RotateCcw } from 'lucide-react';
+import ReactMarkdown from 'react-markdown';
 
-// Dados da história extraídos do PDF
+//Dados extraidos do PDF, storyData atualizado com marcadores de itálico (*)
 const storyData = {
   intro: {
     id: 'intro',
     type: 'input',
     title: 'Solar Quest',
-    content: 'Bem-vindo ao Solar Quest! Digite seu nome para começar esta jornada pelo sertão nordestino.',
+    content: `Bem-vindo ao Solar Quest! Digite seu nome para começar esta jornada pelo sertão nordestino.`,
     background: 'sertao'
   },
   genderChoice: {
@@ -25,35 +26,66 @@ const storyData = {
   maleIntro: {
     id: 'maleIntro',
     type: 'story',
-    content: '[Nome] nasceu em uma comunidade rural isolada no sertão nordestino. Filho de agricultores, cresceu lidando com a seca, escassez e o abandono político.\n\nAos 14 anos, perdeu o pai em um acidente de trabalho. Aos 17, migrou para a cidade em busca de emprego. Trabalhou como servente, eletricista e depois como técnico de energia.\n\n[Nome] carrega um trauma consigo. Ter visto sua querida terra natal, onde estavam guardadas suas melhores lembranças, ser abandonada e explorada por projetos que nunca beneficiaram os moradores.\n\nDiante de todos os problemas que enfrentou, o desejo de devolver a dignidade à sua região está em seu coração.',
+    content: `[Nome] nasceu em uma comunidade rural isolada no sertão nordestino. Filho de agricultores, cresceu lidando com a seca, escassez e o abandono político.
+
+Aos 14 anos, perdeu o pai em um acidente de trabalho. Aos 17, migrou para a cidade em busca de emprego. Trabalhou como servente, eletricista e depois como técnico de energia.
+
+[Nome] carrega um trauma consigo. Ter visto sua querida terra natal, onde estavam guardadas suas melhores lembranças, ser abandonada e explorada por projetos que nunca beneficiaram os moradores.
+
+Diante de todos os problemas que enfrentou, o desejo de devolver a dignidade à sua região está em seu coração.`,
     next: 'maleOpportunity',
     background: 'sertao'
   },
   femaleIntro: {
     id: 'femaleIntro',
     type: 'story',
-    content: '[Nome] cresceu em uma pequena comunidade no interior do sertão. Filha de uma costureira e de um pedreiro, cresceu vendo sua comunidade lutar para sobreviver com dignidade.\n\nSempre foi excelente aluna, curiosa e determinada. Aos 18 anos, conseguiu uma bolsa para estudar engenharia ambiental em uma universidade estadual. Mas teve que abandonar os estudos para cuidar da mãe doente.\n\nViu sua cidade ser ignorada por décadas. Perdeu amigos para doenças respiratórias causadas por queimadas e pela falta de saneamento.\n\nEm meio a todas as dificuldades que enfrentou, [Nome] pretende provar que é possível fazer diferente.',
+    content: `[Nome] cresceu em uma pequena comunidade no interior do sertão. Filha de uma costureira e de um pedreiro, cresceu vendo sua comunidade lutar para sobreviver com dignidade.
+
+Sempre foi excelente aluna, curiosa e determinada. Aos 18 anos, conseguiu uma bolsa para estudar engenharia ambiental em uma universidade estadual. Mas teve que abandonar os estudos para cuidar da mãe doente.
+
+Viu sua cidade ser ignorada por décadas. Perdeu amigos para doenças respiratórias causadas por queimadas e pela falta de saneamento.
+
+Em meio a todas as dificuldades que enfrentou, [Nome] pretende provar que é *possível fazer diferente*.`,
     next: 'femaleOpportunity',
     background: 'sertao'
   },
   maleOpportunity: {
     id: 'maleOpportunity',
     type: 'story',
-    content: 'O mundo está mudando e energia solar se tornou símbolo de progresso. Mas, também de disputa, impacto e ilusão.\n\nDurante uma manutenção em uma subestação, você foi abordado por um investidor que durante os dias esteve te observando durante seu trabalho.\n\nInvestidor:\n- Você conhece esse chão, assim como conhece o sol. Você deseja liderar juntamente a mim e minha equipe, um projeto muito maior?',
+    content: `O mundo está mudando e energia solar se tornou símbolo de progresso. Mas, também de disputa, impacto e ilusão.
+
+Durante uma manutenção em uma subestação, você foi abordado por um investidor que durante os dias esteve te observando durante seu trabalho.
+
+Investidor:
+*- Você conhece esse chão, assim como conhece o sol. Você deseja liderar juntamente a mim e minha equipe, um projeto muito maior?*`,
     choices: [{ text: 'SIM', next: 'meetingMale' }],
     background: 'solar'
   },
   femaleOpportunity: {
     id: 'femaleOpportunity',
     type: 'story',
-    content: 'O mundo está mudando e energia solar se tornou símbolo de progresso. Mas, também de disputa, impacto e ilusão.\n\nDurante um evento de sustentabilidade ao qual foi convidada a participar, você apresenta uma proposta de microgeração solar comunitária.\n\nCarlos Lima, representante da ONG Verde Viva, se aproximou de você:\n- Você tem visão, coragem e determinação. Quer se juntar a mim e minha equipe, para um projeto que pode envolver todo ecossistema?',
+    content: `O mundo está mudando e energia solar se tornou símbolo de progresso. Mas, também de disputa, impacto e ilusão.
+
+Durante um evento de sustentabilidade ao qual foi convidada a participar, você apresenta uma proposta de microgeração solar comunitária.
+
+Carlos Lima, representante da ONG Verde Viva, se aproximou de você:
+*- Você tem visão, coragem e determinação. Quer se juntar a mim e minha equipe, para um projeto que pode envolver todo ecossistema?*`,
     choices: [{ text: 'SIM', next: 'meetingFemale' }],
     background: 'solar'
   },
   meetingMale: {
     id: 'meetingMale',
     type: 'story',
-    content: 'Na Sede do Ministério da Energia, você entra em uma sala iluminada por luz natural. Mapas solares e gráficos estão espalhados pelas paredes.\n\nMinistro Elias Rocha:\n- [Nome], técnico experiente, conhecedor da terra, filho do sertão. Estamos aqui porque acreditamos que você pode liderar algo grande.\n\nCarla Fontes (investidora):\n- A energia solar é o futuro. Mas não basta instalar placas — é preciso entender o solo, o clima, o impacto.\n\nCarlos Lima (ONG Verde Viva):\n- Energia limpa não é desculpa para devastação. Se esse projeto for feito com consciência, pode ser um modelo.',
+    content: `Na Sede do Ministério da Energia, você entra em uma sala iluminada por luz natural. Mapas solares e gráficos estão espalhados pelas paredes.
+
+Ministro Elias Rocha:
+*- [Nome], técnico experiente, conhecedor da terra, filho do sertão. Estamos aqui porque acreditamos que você pode liderar algo grande.*
+
+Carla Fontes (investidora):
+*- A energia solar é o futuro. Mas não basta instalar placas — é preciso entender o solo, o clima, o impacto.*
+
+Carlos Lima (ONG Verde Viva):
+*- Energia limpa não é desculpa para devastação. Se esse projeto for feito com consciência, pode ser um modelo.*`,
     choices: [
       { text: 'Aceitar o desafio', next: 'terrainChoice' },
       { text: 'Desistir do projeto', next: 'gameOver' }
@@ -63,7 +95,16 @@ const storyData = {
   meetingFemale: {
     id: 'meetingFemale',
     type: 'story',
-    content: 'Na Sede do Ministério da Energia, você entra em uma sala iluminada por luz natural. Mapas solares e gráficos estão espalhados pelas paredes.\n\nMinistro Elias Rocha:\n- [Nome]. Técnica ambiental, nascida no sertão, formada pela vida. Estamos lançando um projeto de energia solar que pode transformar o Nordeste.\n\nCarla Fontes:\n- A proposta é clara: instalar um parque solar de grande escala. Energia limpa, empregos, progresso.\n\nCarlos Lima:\n- Energia solar pode ser uma bênção. Mas se for mal planejada, pode destruir mais do que iluminar.',
+    content: `Na Sede do Ministério da Energia, você entra em uma sala iluminada por luz natural. Mapas solares e gráficos estão espalhados pelas paredes.
+
+Ministro Elias Rocha:
+*- [Nome]. Técnica ambiental, nascida no sertão, formada pela vida. Estamos lançando um projeto de energia solar que pode transformar o Nordeste.*
+
+Carla Fontes:
+*- A proposta é clara: instalar um parque solar de grande escala. Energia limpa, empregos, progresso.*
+
+Carlos Lima:
+*- Energia solar pode ser uma bênção. Mas se for mal planejada, pode destruir mais do que iluminar.*`,
     choices: [
       { text: 'Aceitar o desafio', next: 'terrainChoice' },
       { text: 'Desistir do projeto', next: 'gameOver' }
@@ -74,7 +115,13 @@ const storyData = {
     id: 'terrainChoice',
     type: 'choice',
     title: 'A Escolha da Terra',
-    content: 'Após semanas de estudos intensos, chegou o momento decisivo: escolher onde o parque solar será construído.\n\nPedra Branca (Pernambuco):\nFirme, seca, resiliente. Tem sol o ano inteiro, mas é marcada por abandono. O solo sofre, a fauna resiste.\n\nChapada do Sol Nascente (DF):\nViva, elevada, promissora. A luz é pura, mas o solo é instável. Um passo errado, e a terra pode descer.',
+    content: `Após semanas de estudos intensos, chegou o momento decisivo: escolher onde o parque solar será construído.
+
+**Pedra Branca (Pernambuco):**
+Firme, seca, resiliente. Tem sol o ano inteiro, mas é marcada por *abandono*. O solo sofre, a fauna resiste.
+
+**Chapada do Sol Nascente (DF):**
+Viva, elevada, promissora. A luz é pura, mas o solo é *instável*. Um passo errado, e a terra pode descer.`,
     choices: [
       { text: 'Pedra Branca — potência solar, risco de desertificação', next: 'pedraBrancaStart', terrain: 'pedraBranca' },
       { text: 'Chapada do Sol Nascente — inclusão comunitária, risco geológico', next: 'chapadaStart', terrain: 'chapada' }
@@ -84,21 +131,37 @@ const storyData = {
   pedraBrancaStart: {
     id: 'pedraBrancaStart',
     type: 'story',
-    content: 'Dias após a escolha de Pedra Branca, caminhões chegam trazendo equipamentos. O chão seco recebe estruturas metálicas que brilham sob o sol.\n\nColaborador Rafael:\n- Nunca pensei que ia ver isso aqui. Pedra Branca sempre foi poeira e silêncio. Agora tem brilho.\n\nPrimeiros sinais começam: o solo está mais quente, o poço tem menos água, pequenas nuvens de poeira se formam.',
+    content: `Dias após a escolha de Pedra Branca, caminhões chegam trazendo equipamentos. O chão seco recebe estruturas metálicas que brilham sob o sol.
+
+Colaborador Rafael:
+*- Nunca pensei que ia ver isso aqui. Pedra Branca sempre foi poeira e silêncio. Agora tem brilho.*
+
+Primeiros sinais começam: o solo está mais quente, o poço tem menos água, pequenas nuvens de poeira se formam.`,
     next: 'pedraBrancaSigns',
     background: 'construction'
   },
   chapadaStart: {
     id: 'chapadaStart',
     type: 'story',
-    content: 'Após a escolha da Chapada, a comunidade vibra com o projeto. A encosta recebe estruturas metálicas.\n\nColaboradora Tainá:\n- Nunca vi tanta gente trabalhando junto aqui. Parece que a chapada acordou.\n\nPrimeiros sinais: um engenheiro nota inclinação excessiva, a vegetação removida afeta a estabilidade, a água desce mais rápido.',
+    content: `Após a escolha da Chapada, a comunidade vibra com o projeto. A encosta recebe estruturas metálicas.
+
+Colaboradora Tainá:
+*- Nunca vi tanta gente trabalhando junto aqui. Parece que a chapada acordou.*
+
+Primeiros sinais: um engenheiro nota inclinação excessiva, a vegetação removida afeta a estabilidade, a água desce mais rápido.`,
     next: 'chapadaSigns',
     background: 'construction'
   },
   pedraBrancaSigns: {
     id: 'pedraBrancaSigns',
     type: 'story',
-    content: 'Seis meses depois, a terra mostra sinais de cansaço. O calor aumentou, a poeira se espalha, os poços estão mais rasos.\n\nDona Lúcia entra preocupada:\n- O poço da escola secou. As crianças estão trazendo água de casa.\n\nCarla Fontes liga:\n- Precisamos acelerar. Não podemos parar por causa de poeira e poços.',
+    content: `Seis meses depois, a terra mostra sinais de cansaço. O calor aumentou, a poeira se espalha, os poços estão mais rasos.
+
+Dona Lúcia entra preocupada:
+*- O poço da escola secou. As crianças estão trazendo água de casa.*
+
+Carla Fontes liga:
+*- Precisamos acelerar. Não podemos parar por causa de poeira e poços.*`,
     choices: [
       { text: 'Acelerar a obra — atender aos chefes', next: 'pedraBrancaAccelerate' },
       { text: 'Parar e reavaliar — ouvir a comunidade', next: 'pedraBrancaRevaluate' }
@@ -108,7 +171,13 @@ const storyData = {
   chapadaSigns: {
     id: 'chapadaSigns',
     type: 'story',
-    content: 'Seis meses depois, a encosta sussurra. Chuvas deixaram marcas, a água desce mais rápido, o solo escorrega em silêncio.\n\nJeferson:\n- A chuva levou terra para o riacho. A água está turva.\n\nCarla Fontes:\n- Precisamos acelerar. Não podemos parar por causa de lama e água turva.',
+    content: `Seis meses depois, a encosta sussurra. Chuvas deixaram marcas, a água desce mais rápido, o solo escorrega em silêncio.
+
+Jeferson:
+*- A chuva levou terra para o riacho. A água está turva.*
+
+Carla Fontes:
+*- Precisamos acelerar. Não podemos parar por causa de lama e água turva.*`,
     choices: [
       { text: 'Acelerar a obra — atender aos chefes', next: 'chapadaAccelerate' },
       { text: 'Parar e reavaliar — ouvir a comunidade', next: 'chapadaRevaluate' }
@@ -118,7 +187,14 @@ const storyData = {
   pedraBrancaAccelerate: {
     id: 'pedraBrancaAccelerate',
     type: 'story',
-    content: 'O DIA EM QUE O SOL FERIU\n\nO céu amanhece alaranjado. O calor é sufocante. Alarmes soam indicando queda na umidade e aumento extremo da temperatura.\n\nDona Lúcia grita:\n- Isso não é progresso! Isso é castigo!\n\nO poço principal seca. Crianças adoecem. Animais morrem.',
+    content: `**O DIA EM QUE O SOL FERIU**
+
+O céu amanhece alaranjado. O calor é sufocante. Alarmes soam indicando queda na umidade e aumento extremo da temperatura.
+
+Dona Lúcia grita:
+*- Isso não é progresso! Isso é castigo!*
+
+O poço principal seca. Crianças adoecem. Animais morrem.`,
     choices: [
       { text: 'Diminuir o impacto por ações', next: 'pedraBrancaCartomante' },
       { text: 'Abandonar tudo', next: 'gameOverMid' }
@@ -128,7 +204,14 @@ const storyData = {
   chapadaAccelerate: {
     id: 'chapadaAccelerate',
     type: 'story',
-    content: 'O DIA EM QUE A ENCOSTA CAIU\n\nApós chuvas intensas, a encosta cede. Um bloco de terra desliza, atingindo parte do parque e casas.\n\nJeferson:\n- A gente avisou! A chapada não aguenta essa pressa!\n\nO riacho corre barrento e contaminado.',
+    content: `**O DIA EM QUE A ENCOSTA CAIU**
+
+Após chuvas intensas, a encosta cede. Um bloco de terra desliza, atingindo parte do parque e casas.
+
+Jeferson:
+*- A gente avisou! A chapada não aguenta essa pressa!*
+
+O riacho corre barrento e contaminado.`,
     choices: [
       { text: 'Diminuir o impacto por ações', next: 'chapadaCartomante' },
       { text: 'Abandonar tudo', next: 'gameOverMid' }
@@ -138,21 +221,38 @@ const storyData = {
   pedraBrancaRevaluate: {
     id: 'pedraBrancaRevaluate',
     type: 'story',
-    content: 'O DIA EM QUE A TERRA FOI OUVIDA\n\nVocê pausa a obra. Reúne engenheiros e moradores. Barreiras vegetais são plantadas, o uso de água é redirecionado.\n\nDona Lúcia:\n- Ela está respirando de novo. E tudo porque você parou para ouvir.',
+    content: `**O DIA EM QUE A TERRA FOI OUVIDA**
+
+Você pausa a obra. Reúne engenheiros e moradores. Barreiras vegetais são plantadas, o uso de água é redirecionado.
+
+Dona Lúcia:
+*- Ela está respirando de novo. E tudo porque você parou para ouvir.*`,
     next: 'perfectEnding',
     background: 'healing'
   },
   chapadaRevaluate: {
     id: 'chapadaRevaluate',
     type: 'story',
-    content: 'O DIA EM QUE A CHAPADA FOI PROTEGIDA\n\nVocê reúne engenheiros e moradores. Decide reforçar contenções com técnicas ecológicas.\n\nJeferson:\n- A chapada está sendo cuidada. E ela está respondendo.',
+    content: `**O DIA EM QUE A CHAPADA FOI PROTEGIDA**
+
+Você reúne engenheiros e moradores. Decide reforçar contenções com técnicas ecológicas.
+
+Jeferson:
+*- A chapada está sendo cuidada. E ela está respondendo.*`,
     next: 'perfectEnding',
     background: 'healing'
   },
   pedraBrancaCartomante: {
     id: 'pedraBrancaCartomante',
     type: 'story',
-    content: 'AQUELA QUE LÊ A TERRA\n\nVocê procura Mãe Zefa em sua cabana, cercada por mandacarus.\n\nMãe Zefa:\n- Você trouxe luz demais. E não escutou a sombra. Pedra Branca está em desequilíbrio.\n\nEla aponta para três objetos: uma pedra rachada, uma garrafa com água turva, e uma folha seca.',
+    content: `**AQUELA QUE LÊ A TERRA**
+
+Você procura Mãe Zefa em sua cabana, cercada por mandacarus.
+
+Mãe Zefa:
+*- Você trouxe luz demais. E não escutou a sombra. Pedra Branca está em desequilíbrio.*
+
+Ela aponta para três objetos: uma pedra rachada, uma garrafa com água turva, e uma folha seca.`,
     choices: [
       { text: 'Reverter totalmente e reconstruir com respeito', next: 'goodEnding' },
       { text: 'Não mudar nada, continuar como está', next: 'tragicEnding' },
@@ -163,7 +263,14 @@ const storyData = {
   chapadaCartomante: {
     id: 'chapadaCartomante',
     type: 'story',
-    content: 'AQUELA QUE LÊ A TERRA\n\nVocê encontra Dona Iraci em uma clareira, com um bastão de madeira nas mãos.\n\nDona Iraci:\n- Você trouxe pressa para um lugar que vive de tempo. A chapada está ferida.\n\nEla desenha três linhas na terra: uma reta, uma curva, e uma quebrada.',
+    content: `**AQUELA QUE LÊ A TERRA**
+
+Você encontra Dona Iraci em uma clareira, com um bastão de madeira nas mãos.
+
+Dona Iraci:
+*- Você trouxe pressa para um lugar que vive de tempo. A chapada está ferida.*
+
+Ela desenha três linhas na terra: uma reta, uma curva, e uma quebrada.`,
     choices: [
       { text: 'Reverter totalmente e reconstruir com respeito', next: 'goodEnding' },
       { text: 'Não mudar nada, continuar como está', next: 'tragicEnding' },
@@ -175,42 +282,52 @@ const storyData = {
     id: 'perfectEnding',
     type: 'ending',
     title: 'FINAL PERFEITO',
-    content: 'Você escutou a terra antes que ela gritasse. O parque se tornou referência internacional em energia sustentável. A comunidade prospera com equilíbrio ambiental.\n\nA luz que você trouxe não queima - ela cura.',
+    content: `Você escutou a terra antes que ela gritasse. O parque se tornou referência internacional em energia sustentável. A comunidade prospera com equilíbrio ambiental.
+
+A luz que você trouxe não queima - *ela cura*.`,
     background: 'paradise'
   },
   goodEnding: {
     id: 'goodEnding',
     type: 'ending',
     title: 'FINAL BOM',
-    content: 'Você convoca a comunidade. Barreiras vegetais são ampliadas. Sistemas de reuso de água são instalados. O parque é redesenhado para coexistir com a terra.\n\nDona Lúcia:\n- Você não só trouxe luz. Você trouxe cuidado.',
+    content: `Você convoca a comunidade. Barreiras vegetais são ampliadas. Sistemas de reuso de água são instalados. O parque é redesenhado para coexistir com a terra.
+
+Dona Lúcia:
+*- Você não só trouxe luz. Você trouxe cuidado.*`,
     background: 'growth'
   },
   tragicEnding: {
     id: 'tragicEnding',
     type: 'ending',
     title: 'FINAL TRÁGICO',
-    content: 'Você ignora os alertas. O parque continua a operar. A poeira se intensifica. Os poços secam. A cidade começa a esvaziar.\n\nDona Lúcia:\n- Você viu. Você sabia. Mas não escutou.',
+    content: `Você ignora os alertas. O parque continua a operar. A poeira se intensifica. Os poços secam. A cidade começa a esvaziar.
+
+Dona Lúcia:
+*- Você viu. Você sabia. Mas não escutou.*`,
     background: 'desolation'
   },
   midEnding: {
     id: 'midEnding',
     type: 'ending',
     title: 'FINAL MEIO TERMO',
-    content: 'Você desativa o parque. A comunidade perde investimentos. A terra começa a se recuperar lentamente. O projeto é encerrado.\n\nA natureza seguirá seu curso.',
+    content: `Você desativa o parque. A comunidade perde investimentos. A terra começa a se recuperar lentamente. O projeto é encerrado.
+
+*A natureza seguirá seu curso.*`,
     background: 'neutral'
   },
   gameOver: {
     id: 'gameOver',
     type: 'ending',
     title: 'FIM DE JOGO',
-    content: 'Você decidiu não aceitar o desafio. Às vezes, a sabedoria está em saber quando não agir.',
+    content: `Você decidiu não aceitar o desafio. *Às vezes, a sabedoria está em saber quando não agir.*`,
     background: 'ending'
   },
   gameOverMid: {
     id: 'gameOverMid',
     type: 'ending',
     title: 'FINAL MEIO TERMO',
-    content: 'Você abandonou o projeto diante do primeiro grande desafio. A natureza seguirá seu curso.',
+    content: `Você abandonou o projeto diante do primeiro grande desafio. *A natureza seguirá seu curso.*`,
     background: 'ending'
   },
   credits: {
@@ -296,9 +413,9 @@ const SolarQuest = () => {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4" 
+    <div className="min-h-screen flex items-center justify-center p-4"
          style={{ background: backgroundStyle }}>
-      
+
       <motion.div
         className="absolute inset-0 opacity-20"
         animate={{
@@ -315,9 +432,9 @@ const SolarQuest = () => {
       </motion.div>
 
       <div className="relative z-10 w-full max-w-4xl">
-        
+
         {playerName && currentScene !== 'intro' && (
-          <motion.div 
+           <motion.div
             className="mb-6 text-center"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -338,10 +455,10 @@ const SolarQuest = () => {
             transition={{ duration: 0.6 }}
             className="bg-white/95 backdrop-blur-sm rounded-3xl shadow-2xl overflow-hidden"
           >
-            
+
             {scene.title && (
               <div className="bg-gradient-to-r from-green-600 to-yellow-600 text-white p-6 text-center">
-                <motion.h1 
+                <motion.h1
                   className="text-2xl md:text-3xl font-bold flex items-center justify-center gap-3"
                   animate={{ scale: [1, 1.05, 1] }}
                   transition={{ duration: 2, repeat: Infinity }}
@@ -354,9 +471,9 @@ const SolarQuest = () => {
             )}
 
             <div className="p-8">
-              
+
               {scene.type === 'input' && (
-                <motion.div 
+                <motion.div
                   className="text-center space-y-6"
                   initial={{ scale: 0.9 }}
                   animate={{ scale: 1 }}
@@ -368,10 +485,10 @@ const SolarQuest = () => {
                   >
                     <Sun className="w-16 h-16 text-yellow-500 mx-auto mb-4" />
                   </motion.div>
-                  
+
                   <h2 className="text-4xl font-bold text-gray-800 mb-4">Solar Quest</h2>
                   <p className="text-lg text-gray-600 mb-6">{scene.content}</p>
-                  
+
                   <div className="flex gap-3 max-w-md mx-auto">
                     <input
                       type="text"
@@ -393,29 +510,22 @@ const SolarQuest = () => {
                 </motion.div>
               )}
 
+              {/* PASSO 3: Bloco de renderização ATUALIZADO para usar ReactMarkdown */}
               {(scene.type === 'story' || scene.type === 'choice') && (
-                <motion.div 
+                <motion.div
                   className="space-y-6"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.3 }}
                 >
                   <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed">
-                    {replacePlayerName(scene.content).split('\n\n').map((paragraph, index) => (
-                      <motion.p 
-                        key={index}
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: index * 0.2 }}
-                        className="mb-4 whitespace-pre-line"
-                      >
-                        {paragraph}
-                      </motion.p>
-                    ))}
+                    <ReactMarkdown>
+                      {replacePlayerName(scene.content)}
+                    </ReactMarkdown>
                   </div>
 
                   {scene.choices && (
-                    <motion.div 
+                    <motion.div
                       className="space-y-4"
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
@@ -442,7 +552,7 @@ const SolarQuest = () => {
                   )}
 
                   {scene.next && !scene.choices && (
-                    <motion.div 
+                    <motion.div
                       className="text-center"
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
@@ -462,15 +572,16 @@ const SolarQuest = () => {
                 </motion.div>
               )}
 
+              {/* PASSO 3 (continuação): Bloco de renderização de FINAIS ATUALIZADO */}
               {scene.type === 'ending' && (
-                <motion.div 
+                <motion.div
                   className="text-center space-y-6"
                   initial={{ scale: 0.8, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
                   transition={{ duration: 0.8 }}
                 >
                   <motion.div
-                    animate={{ 
+                    animate={{
                       scale: [1, 1.1, 1],
                       rotate: [0, 5, 0, -5, 0]
                     }}
@@ -481,21 +592,13 @@ const SolarQuest = () => {
                     {scene.title.includes('TRÁGICO') && <Zap className="w-20 h-20 text-red-500 mx-auto mb-4" />}
                     {(scene.title.includes('MEIO TERMO') || scene.title.includes('FIM')) && <Mountain className="w-20 h-20 text-gray-500 mx-auto mb-4" />}
                   </motion.div>
-                  
+
                   <h2 className="text-3xl font-bold text-gray-800 mb-4">{scene.title}</h2>
-                  
+
                   <div className="prose prose-lg max-w-none text-gray-700">
-                    {scene.content.split('\n\n').map((paragraph, index) => (
-                      <motion.p 
-                        key={index}
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: index * 0.3 }}
-                        className="mb-4 whitespace-pre-line"
-                      >
-                        {paragraph}
-                      </motion.p>
-                    ))}
+                    <ReactMarkdown>
+                      {scene.content}
+                    </ReactMarkdown>
                   </div>
 
                   <motion.div
@@ -512,7 +615,7 @@ const SolarQuest = () => {
                     >
                       Ver Créditos
                     </motion.button>
-                    
+
                     <motion.button
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
@@ -527,7 +630,7 @@ const SolarQuest = () => {
               )}
 
               {scene.type === 'credits' && (
-                <motion.div 
+                <motion.div
                   className="text-center space-y-8"
                   initial={{ opacity: 0, y: 50 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -539,11 +642,11 @@ const SolarQuest = () => {
                   >
                     <Sun className="w-16 h-16 text-yellow-500 mx-auto mb-6" />
                   </motion.div>
-                  
+
                   <h2 className="text-4xl font-bold text-gray-800 mb-8">Solar Quest</h2>
-                  
+
                   <div className="space-y-6 text-lg text-gray-700">
-                    <motion.div 
+                    <motion.div
                       initial={{ x: -50, opacity: 0 }}
                       animate={{ x: 0, opacity: 1 }}
                       transition={{ delay: 0.5 }}
@@ -552,8 +655,8 @@ const SolarQuest = () => {
                       <h3 className="font-bold text-xl mb-2">Orientador</h3>
                       <p>{scene.content.orientador}</p>
                     </motion.div>
-                    
-                    <motion.div 
+
+                    <motion.div
                       initial={{ x: 50, opacity: 0 }}
                       animate={{ x: 0, opacity: 1 }}
                       transition={{ delay: 0.7 }}
@@ -562,8 +665,8 @@ const SolarQuest = () => {
                       <h3 className="font-bold text-xl mb-2">Alunos</h3>
                       <p>{scene.content.alunos}</p>
                     </motion.div>
-                    
-                    <motion.div 
+
+                    <motion.div
                       initial={{ x: -50, opacity: 0 }}
                       animate={{ x: 0, opacity: 1 }}
                       transition={{ delay: 0.9 }}
@@ -572,7 +675,7 @@ const SolarQuest = () => {
                       <h3 className="font-bold text-xl mb-2">Colaboradores</h3>
                       <div className="space-y-2">
                         {scene.content.colaboradores.map((colaborador, index) => (
-                          <motion.p 
+                          <motion.p
                             key={index}
                             initial={{ opacity: 0, y: 10 }}
                             animate={{ opacity: 1, y: 0 }}
