@@ -218,8 +218,8 @@ const storyData = {
     type: 'credits',
     title: 'Solar Quest - Créditos',
     content: {
-      orientador: 'Renato',
-      alunos: 'Lucas Nadson, Mariana Vitória, Rikelmy – 3 ano "G" EREMWAL',
+      orientador: 'Renato Nunes Ramalho',
+      alunos: 'Lucas Nadson, Mariana Vitória, Rikelmy – 3° ano "G" EREMWAL 2025',
       colaboradores: [
         'Cefras Mandú, Robson Luan – Eng. de Computação IFPB - CG',
         'Francisco Ferreira - UniFAP - CE'
