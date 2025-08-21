@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Sun, Leaf, Zap, Mountain, Users, Home, RotateCcw } from 'lucide-react';
 
-// Dados da história extraídos do PDF atualizado
+// Dados da história extraídos do PDF
 const storyData = {
   intro: {
     id: 'intro',
