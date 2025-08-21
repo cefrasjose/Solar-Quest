@@ -38,12 +38,12 @@ O jogo apresenta uma narrativa ramificada onde o jogador toma decisões crítica
 <p align="center">
   <img src="./screenshots/Captura de tela 2025-08-21 042045.png" alt="Tela Inicial" width="45%"/>
   <img src="./screenshots/Captura de tela 2025-08-21 042711.png" alt="Sistema de Escolhas" width="45%"/>
-  <img src="./screenshots/Captura de tela 2025-08-21 042740.png" alt="Sistema de Escolhas" width="45%"/>
-  <img src="./screenshots/Captura de tela 2025-08-21 042759.png" alt="Sistema de Escolhas" width="45%"/>
+  <img src="./screenshots/Captura de tela 2025-08-21 163909.png" alt="Sistema de Escolhas" width="45%"/>
+  <img src="./screenshots/Captura de tela 2025-08-21 163947.png" alt="Sistema de Escolhas" width="45%"/>
 </p>
 
 <p align="center">
-  <img src="./screenshots/Captura de tela 2025-08-21 042807.png" alt="Final do Jogo" width="70%"/>
+  <img src="./screenshots/Captura de tela 2025-08-21 164246.png" alt="Final do Jogo" width="70%"/>
 </p>
 
 ---
