@@ -1,7 +1,5 @@
 # Arquitetura do Componente SolarQuest
 
-Este documento descreve a arquitetura do componente React SolarQuest, que implementa um jogo narrativo interativo.
-
 ## 1. Visão Geral
 
 O SolarQuest é um componente React de página única que gerencia o estado e a renderização de um jogo de aventura baseado em texto. Ele é construído como uma **máquina de estados finitos**, onde cada "estado" é uma cena da história. A transição entre as cenas é controlada pelas interações do usuário.
@@ -169,5 +167,3 @@ A arquitetura permite fácil extensão e manutenção:
 - **Renderização Condicional**: Interface adapta-se automaticamente ao tipo de cena
 - **Animações Declarativas**: Transições suaves sem lógica complexa
 - **Personalização Visual**: Backgrounds facilmente configuráveis
-
-Esta estrutura torna o SolarQuest um componente escalável e de fácil manutenção, ideal para jogos narrativos interativos.
