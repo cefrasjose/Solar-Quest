@@ -3,13 +3,22 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Sun, Leaf, Zap, Mountain, Users, Home, RotateCcw } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 
-//Dados da história do jogo, extraidos do arquivo do roteiro
 const storyData = {
+  title: {
+    id: 'title',
+    type: 'choice',
+    title: 'Solar Quest',
+    content: `*"Construir um futuro exige mais do que luz, exige consciência.”*`,
+    choices: [
+      { text: 'START', next: 'intro' }
+    ],
+    background: 'sertao'
+  },
   intro: {
     id: 'intro',
     type: 'input',
     title: 'Solar Quest',
-    content: `Bem-vindo ao Solar Quest! Digite seu nome para começar esta jornada pelo sertão nordestino.`,
+    content: `Digite seu nome para começar esta jornada pelo sertão nordestino.`,
     background: 'sertao'
   },
   genderChoice: {
@@ -536,23 +545,23 @@ const backgrounds = {
 };
 
 const SolarQuest = () => {
-  const [currentScene, setCurrentScene] = useState('intro');
+  // CORREÇÃO: Alterado o estado inicial de 'intro' para 'title'
+  const [currentScene, setCurrentScene] = useState('title');
   const [playerName, setPlayerName] = useState('');
   const [playerGender, setPlayerGender] = useState('');
   const [terrain, setTerrain] = useState('');
   const [inputName, setInputName] = useState('');
 
   const resetGame = () => {
-    setCurrentScene('intro');
+    // Ao resetar, volta para a tela de título
+    setCurrentScene('title');
     setPlayerName('');
     setPlayerGender('');
     setTerrain('');
     setInputName('');
   };
 
-  // FUNÇÕES DE NAVEGAÇÃO ATUALIZADAS para lidar com lógica condicional
   const handleChoice = (choice) => {
-    // Atualiza o estado primeiro, se necessário
     if (choice.gender) {
       setPlayerGender(choice.gender);
     }
@@ -561,7 +570,6 @@ const SolarQuest = () => {
     }
 
     let nextSceneId = choice.next;
-    // Verifica se 'next' é uma função para resolver a próxima cena
     if (typeof nextSceneId === 'function') {
       nextSceneId = nextSceneId(playerGender, terrain);
     }
@@ -570,9 +578,7 @@ const SolarQuest = () => {
 
   const handleNext = (nextScene) => {
     let nextSceneId = nextScene;
-    // Verifica se 'next' é uma função para resolver a próxima cena
     if (typeof nextSceneId === 'function') {
-      // Passa o estado atual para a função determinar a rota
       nextSceneId = nextSceneId(playerGender, terrain);
     }
     setCurrentScene(nextSceneId);
@@ -701,7 +707,7 @@ const SolarQuest = () => {
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.3 }}
                 >
-                  <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed">
+                  <div className={`prose prose-lg max-w-none text-gray-700 leading-relaxed ${scene.id === 'title' ? 'text-center' : ''}`}>
                     <ReactMarkdown>
                       {replacePlayerName(scene.content)}
                     </ReactMarkdown>
@@ -726,8 +732,14 @@ const SolarQuest = () => {
                             {choice.terrain === 'pedraBranca' && <Mountain className="w-6 h-6 text-orange-600" />}
                             {choice.terrain === 'chapada' && <Mountain className="w-6 h-6 text-green-600" />}
                             {choice.gender && <Users className="w-6 h-6 text-blue-600" />}
-                            {!choice.terrain && !choice.gender && <Zap className="w-6 h-6 text-yellow-600" />}
-                            <span className="font-semibold text-gray-800">{choice.text}</span>
+                            {/* Centraliza o botão de START na tela de título */}
+                            {currentScene === 'title' ? 
+                              <span className="font-semibold text-gray-800 w-full text-center">{choice.text}</span> :
+                              <>
+                                {!choice.terrain && !choice.gender && <Zap className="w-6 h-6 text-yellow-600" />}
+                                <span className="font-semibold text-gray-800">{choice.text}</span>
+                              </>
+                            }
                           </div>
                         </motion.button>
                       ))}
