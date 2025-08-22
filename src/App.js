@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Sun, Leaf, Zap, Mountain, Users, Home, RotateCcw } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 
-//Dados extraidos do PDF, storyData atualizado com marcadores de itálico (*)
+//Dados da história do jogo, extraidos do arquivo do roteiro
 const storyData = {
   intro: {
     id: 'intro',
@@ -87,21 +87,21 @@ Carlos Lima:
     id: 'meetingMale',
     type: 'story',
     title: 'A PROPOSTA',
-    content: `Na Sede do Ministério da Energia, bairro do Recife Antigo, você entra em uma sala iluminada por luz natural. Mapas solares e gráficos estão espalhados pelas paredes. Sentados à mesa estão: Carla Fontes (investidora), Carlos Lima (ONG Verde Viva) e o Ministro Elias Rocha.
+    content: `Na Sede do Ministério da Energia, bairro do Recife Antigo, você entra em uma sala iluminada por luz natural. Mapas solares e gráficos estão espalhados pelas paredes.
 
 Ministro Elias Rocha:
-*- [Nome], técnico experiente, conhecedor da terra, filho do sertão. Estamos aqui porque acreditamos que você pode liderar algo grande. O país está investindo pesado em energia solar. E queremos começar por aqui — onde o sol nunca falha.*
+*- [Nome], técnico experiente, conhecedor da terra, filho do sertão. Estamos aqui porque acreditamos que você pode liderar algo grande.*
 
-Carla Fontes:
-*- A energia solar é o futuro. Mas não basta instalar placas — é preciso entender o solo, o clima, o impacto. Precisamos de alguém que saiba onde pisar. Alguém como você.*
+Carla Fontes (investidora):
+*- A energia solar é o futuro. Mas não basta instalar placas — é preciso entender o solo, o clima, o impacto.*
 
-Carlos Lima:
-*- Energia limpa não é desculpa para devastação. Se esse projeto for feito com consciência, pode ser um modelo. Se for feito com pressa, será mais uma ferida aberta.*
+Carlos Lima (ONG Verde Viva):
+*- Energia limpa não é desculpa para devastação. Se esse projeto for feito com consciência, pode ser um modelo.*
 
-Você observa os mapas e projeções. Vê números, promessas, mas também lembra da terra seca, dos poços que secaram.
+Você observa os mapas e projeções e lembra da terra seca, dos poços que secaram.
 *(Pensando): Energia limpa... mas será que é limpa para todo mundo? Se eu aceitar isso, não posso errar.*`,
     choices: [
-      { text: 'ACEITAR O DESAFIO', next: 'terrainChoice' },
+      { text: 'ACEITAR O DESAFIO', next: 'terrainChoiceIntro' },
       { text: 'DESISTIR DESSE PROJETO', next: 'gameOver' }
     ],
     background: 'meeting'
@@ -110,42 +110,61 @@ Você observa os mapas e projeções. Vê números, promessas, mas também lembr
     id: 'meetingFemale',
     type: 'story',
     title: 'A PROPOSTA',
-    content: `Na Sede do Ministério da Energia, bairro do Recife Antigo, você entra em uma sala iluminada por luz natural. Mapas solares e gráficos estão espalhados pelas paredes. Sentados à mesa estão: Carla Fontes (investidora), Carlos Lima (ONG Verde Viva) e o Ministro Elias Rocha.
+    content: `Na Sede do Ministério da Energia, bairro do Recife Antigo, você entra em uma sala iluminada por luz natural. Mapas solares e gráficos estão espalhados pelas paredes.
 
 Ministro Elias Rocha:
-*- [Nome]. Técnica ambiental, nascida no sertão, formada pela vida. Estamos lançando um projeto de energia solar que pode transformar o Nordeste.*
+*- [Nome]. Técnica ambiental, nascida no sertão, formada pela vida. Estamos lançando um projeto que pode transformar o Nordeste.*
 
-Carla Fontes:
-*- A proposta é clara: instalar um parque solar de grande escala. Energia limpa, empregos, progresso. Mas precisamos de alguém que entenda o solo, o clima, o impacto.*
+Carla Fontes (investidora):
+*- A proposta é clara: instalar um parque solar de grande escala. Energia limpa, empregos, progresso.*
 
-Carlos Lima:
-*- Energia solar pode ser uma bênção. Mas se for mal planejada, pode destruir mais do que iluminar. Precisamos de alguém com consciência. Alguém que saiba ouvir a terra.*
+Carlos Lima (ONG Verde Viva):
+*- Energia solar pode ser uma bênção. Mas se for mal planejada, pode destruir mais do que iluminar.*
 
-Você observa os mapas e gráficos. Vê números, promessas, mas também vê os rostos da infância — os vizinhos que adoeceram, os poços que secaram.
+Você observa os mapas e gráficos e vê os rostos da infância — os vizinhos que adoeceram, os poços que secaram.
 *(Pensando): Energia limpa... mas limpa para quem? Se eu aceitar isso, vou fazer do meu jeito. Com respeito, com escuta, com raiz.*`,
     choices: [
-      { text: 'ACEITAR O DESAFIO', next: 'terrainChoice' },
+      { text: 'ACEITAR O DESAFIO', next: 'terrainChoiceIntro' },
       { text: 'DESISTIR DESSE PROJETO', next: 'gameOver' }
     ],
     background: 'meeting'
   },
+  terrainChoiceIntro: {
+    id: 'terrainChoiceIntro',
+    type: 'story',
+    title: 'A Escolha da Terra',
+    content: `Dias se passaram. O entusiasmo inicial deu lugar a semanas de estudos intensos. A cidade está em alvoroço. O projeto é uma promessa que paira sobre o sertão.
+
+Você mergulhou fundo: mapas, dados, visitas. Sentiu o chão sob os pés. Agora, no auditório do Ministério, chegou o momento decisivo.
+
+Você (fala de abertura):
+*- Quando aceitei esse projeto, sabia que não seria apenas sobre energia. Seria sobre terra, memória e futuro. Encontrei dois lugares que podem receber essa luz — mas cada um carrega suas próprias verdades.*`,
+    next: 'terrainChoice',
+    background: 'landscape'
+  },
   terrainChoice: {
     id: 'terrainChoice',
     type: 'choice',
-    title: 'A Escolha da Terra',
-    content: `Após semanas de estudos intensos, chegou o momento decisivo. No auditório do Ministério, você apresenta as duas opções de terreno.
+    title: 'Apresentação dos Terrenos',
+    content: `**Pedra Branca (PE):**
+*- Firme, seca, resiliente. Tem sol o ano inteiro, mas é marcada por abandono. O solo sofre, a fauna resiste. Se não cuidarmos, podemos transformar resistência em ruína.*
 
-**Opção 1: Pedra Branca (Pernambuco)**
-*- Pedra Branca é firme, seca, resiliente. Tem sol o ano inteiro, mas é marcada por abandono. O solo sofre, a fauna resiste. Se não cuidarmos, podemos transformar resistência em ruína.*
+**Chapada do Sol Nascente (DF):**
+*- Viva, elevada, promissora. A luz é pura, mas o solo é instável. Um passo errado, e a terra pode descer.*
 
-Dona Lúcia (representante de Pedra Branca):
+Dona Lúcia (Pedra Branca):
 *- Essa terra já viu muita coisa. Se vier com respeito, ela pode florescer. Mas se vier com pressa, ela vai se fechar.*
 
-**Opção 2: Chapada do Sol Nascente (DF)**
-*- A Chapada do Sol Nascente é viva, elevada, promissora. A luz ali é pura, mas o solo é instável. Um passo errado, e a terra pode descer. Mas se feito com cuidado, pode se tornar um modelo de inclusão.*
+Jeferson Silva (Sol Nascente):
+*- A gente quer fazer parte. Mas não queremos que a chapada vire só mais um lugar bonito destruído por promessas.*
 
-Jeferson Silva (representante da Sol Nascente):
-*- A gente quer fazer parte. Quer aprender, trabalhar, crescer. Mas não queremos que a chapada vire só mais um lugar bonito destruído por promessas.*`,
+Carla Fontes (investidora):
+*- Ambos têm potencial. Mas precisamos de resultados. O mundo não vai esperar.*
+
+Carlos Lima (ONG Verde Viva):
+*- O mundo também não precisa de mais projetos que ignoram o que está vivo. Sua escolha pode ser o exemplo — ou o alerta.*
+
+Você observa os rostos. A decisão não é apenas técnica — é moral, política e ecológica.`,
     choices: [
       { text: 'Pedra Branca — potência solar, risco de desertificação', next: 'pedraBrancaStart', terrain: 'pedraBranca' },
       { text: 'Chapada do Sol Nascente — inclusão comunitária, risco geológico', next: 'chapadaStart', terrain: 'chapada' }
@@ -158,13 +177,12 @@ Jeferson Silva (representante da Sol Nascente):
     title: 'Capítulo 2: Sol sobre Pedra',
     content: `Dias após a escolha, caminhões chegam a Pedra Branca. O chão seco recebe estruturas metálicas que brilham sob o sol.
 
-Colaborador Rafael:
-*- Nunca pensei que ia ver isso aqui. Pedra Branca sempre foi poeira e silêncio. Agora tem brilho. Vai mudar tudo, né?*
+Colaborador (Rafael):
+*- Nunca pensei que ia ver isso aqui. Pedra Branca sempre foi poeira e silêncio. Agora tem brilho.*
 
 Você:
 *- Vai mudar, sim. Mas a gente tem que garantir que seja para melhor.*
 
-Primeiros sinais aparecem: o solo está mais quente, um morador comenta que o poço tem menos água, pequenas nuvens de poeira se formam.
 *(Pensando): Nada grave. Ainda não. Mas o sertão fala baixo. E quando grita... é tarde demais.*`,
     next: 'pedraBrancaSigns',
     background: 'construction'
@@ -175,13 +193,12 @@ Primeiros sinais aparecem: o solo está mais quente, um morador comenta que o po
     title: 'Capítulo 2: Luz na Encosta',
     content: `Após a escolha da Chapada, a comunidade vibra. A encosta recebe estruturas metálicas e os moradores acompanham com curiosidade.
 
-Colaboradora Tainá:
+Colaboradora (Tainá):
 *- Nunca vi tanta gente trabalhando junto aqui. Parece que a chapada acordou.*
 
 Você:
 *- Acordou, sim. Mas ela é frágil. A gente tem que pisar leve.*
 
-Primeiros sinais aparecem: um engenheiro nota inclinação excessiva, a vegetação removida afeta a estabilidade, a água da chuva desce mais rápido.
 *(Pensando): Nada urgente. Nada alarmante. Mas a chapada tem memória. E ela cobra.*`,
     next: 'chapadaSigns',
     background: 'construction'
@@ -190,15 +207,12 @@ Primeiros sinais aparecem: um engenheiro nota inclinação excessiva, a vegetaç
     id: 'pedraBrancaSigns',
     type: 'story',
     title: 'A Terra Reclama em Silêncio',
-    content: `Seis meses depois, o parque cresceu rápido, mas a terra mostra sinais de cansaço. Dona Lúcia entra em seu escritório, preocupada.
+    content: `Seis meses depois, o parque cresceu rápido, mas a terra mostra sinais de cansaço. Dona Lúcia entra em seu escritório.
 
 Dona Lúcia:
-*- O poço da escola secou. As crianças estão trazendo água de casa. E as galinhas... estão morrendo de sede.*
+*- O poço da escola secou. As crianças estão trazendo água de casa. Os dados não bebem água, [Nome]. A gente sim.*
 
-Ela coloca sobre a mesa uma garrafa com água turva.
-*- Isso aqui é o que sobrou. E ainda dizem que é progresso.*
-
-O telefone toca. É Carla Fontes, a investidora.
+O telefone toca. É Carla Fontes.
 *- [Nome], precisamos acelerar. Não podemos parar por causa de poeira e poços.*
 
 *(Pensando): A luz que prometi... está começando a queimar. Mas se eu parar agora, posso perder tudo. E se eu seguir... posso perder o que importa.*`,
@@ -212,13 +226,10 @@ O telefone toca. É Carla Fontes, a investidora.
     id: 'chapadaSigns',
     type: 'story',
     title: 'A Encosta Sussurra',
-    content: `Seis meses depois, o parque se ergue como um espelho no céu. Mas a encosta sussurra. Chuvas recentes deixaram marcas. Jeferson te chama com urgência.
+    content: `Seis meses depois, a comunidade está envolvida, mas a encosta sussurra. Jeferson te chama com urgência.
 
 Jeferson:
-*- A chuva da semana passada levou terra direto para o riacho. A água está turva. E as crianças não podem mais nadar lá.*
-
-Ele aponta para a água, antes cristalina, agora barrenta.
-*- Leve para vocês. Para a gente, é o começo de um problema.*
+*- A chuva levou terra para o riacho. A água está turva. Para a gente, é o começo de um problema. E se vier mais chuva?*
 
 Você recebe uma mensagem de Carla Fontes.
 *- [Nome], precisamos acelerar. Não podemos parar por causa de lama e água turva.*
@@ -234,16 +245,17 @@ Você recebe uma mensagem de Carla Fontes.
     id: 'pedraBrancaAccelerate',
     type: 'story',
     title: 'Capítulo 3: O Dia em que o Sol Feriu',
-    content: `O céu amanhece com uma tonalidade alaranjada. O calor é sufocante, e o vento levanta nuvens densas de poeira. Alarmes soam: queda brusca na umidade do solo.
+    content: `O céu amanhece laranja. O vento levanta nuvens densas de poeira. Alarmes soam. O poço principal seca. Crianças adoecem. Animais morrem.
 
-Do lado de fora, a poeira invade casas, escolas são fechadas. O poço principal seca completamente. Crianças adoecem. Animais morrem.
+Dona Lúcia (gritando):
+*- Isso não é progresso! Isso é castigo!*
 
-Dona Lúcia (gritando entre a poeira):
-*- Isso não é progresso! Isso é castigo! A terra está se vingando!*
+Você (tentando coordenar a equipe):
+*- Fechem os painéis danificados! Protejam os poços! Mandem buscar caminhões-pipa!*
 
-O parque, antes símbolo de esperança, se torna o epicentro de um desastre ambiental.`,
+O parque se torna o epicentro de um desastre ambiental.`,
     choices: [
-      { text: 'Diminuir o impacto por meio de ações', next: 'pedraBrancaCartomante' },
+      { text: 'Diminuir o impacto por meio de ações', next: 'pedraBrancaActions' },
       { text: 'Abandonar tudo', next: 'gameOverMid' }
     ],
     background: 'disaster'
@@ -252,14 +264,17 @@ O parque, antes símbolo de esperança, se torna o epicentro de um desastre ambi
     id: 'chapadaAccelerate',
     type: 'story',
     title: 'Capítulo 3: O Dia em que a Encosta Caiu',
-    content: `Após dias de chuva intensa, a encosta cede. Um bloco de terra desliza, atingindo parte do parque e casas próximas.
+    content: `Após dias de chuva intensa, a encosta cede. Um bloco de terra desliza, atingindo o parque e casas.
 
 Jeferson (correndo entre os escombros):
 *- A gente avisou! A chapada não aguenta essa pressa!*
 
-O riacho, antes cristalino, agora corre barrento e contaminado. Peixes mortos boiam. ONGs denunciam. Diante da encosta ferida, você sente o peso da escolha.`,
+Você (em choque):
+*- Evacuem a área! Chamem os bombeiros! Isolem os painéis quebrados!*
+
+O riacho corre contaminado. A mídia chega. ONGs denunciam. Você sente o peso da escolha.`,
     choices: [
-      { text: 'Diminuir o impacto por meio de ações', next: 'chapadaCartomante' },
+      { text: 'Diminuir o impacto por meio de ações', next: 'chapadaActions' },
       { text: 'Abandonar tudo', next: 'gameOverMid' }
     ],
     background: 'disaster'
@@ -273,7 +288,7 @@ O riacho, antes cristalino, agora corre barrento e contaminado. Peixes mortos bo
 Você (em reunião comunitária):
 *- A terra está nos avisando. E nós vamos escutar.*
 
-Nos dias seguintes, barreiras vegetais são plantadas, o uso de água é redirecionado e a poeira diminui.
+Barreiras vegetais são plantadas, o uso de água é redirecionado. A poeira diminui. O solo começa a se recompor.
 
 Dona Lúcia (emocionada):
 *- Ela está respirando de novo. E tudo porque você parou para ouvir.*`,
@@ -284,48 +299,107 @@ Dona Lúcia (emocionada):
     id: 'chapadaRevaluate',
     type: 'story',
     title: 'O Dia em que a Chapada Foi Protegida',
-    content: `Você reúne engenheiros e moradores para revisar o projeto. Decide reforçar contenções com técnicas ecológicas e replantar vegetação nativa.
+    content: `Você reúne engenheiros e moradores. Decide reforçar contenções com técnicas ecológicas e replantar vegetação nativa.
 
-Jeferson (durante mutirão comunitário):
-*- Nunca pensei que ia ver tanta gente plantando árvore aqui. A chapada está sendo cuidada. E ela está respondendo.*
+Jeferson (durante mutirão):
+*- A chapada está sendo cuidada. E ela está respondendo.*
 
-As chuvas chegam, mas o solo se mantém firme. O riacho continua limpo. O parque cresce com respeito à encosta.`,
+As chuvas chegam, mas o solo se mantém firme. O riacho continua limpo. O parque cresce com respeito.`,
     next: 'perfectEnding',
     background: 'healing'
+  },
+  pedraBrancaActions: {
+    id: 'pedraBrancaActions',
+    type: 'story',
+    title: 'Respirar o Sertão',
+    content: `Você reúne todos para iniciar ações emergenciais. Barreiras com mandacarus são erguidas para conter a poeira. Um sistema de reuso de água é criado para limpar os painéis. Um viveiro comunitário começa a reflorestar a área.
+
+Dona Lúcia (sorrindo, com as mãos na terra):
+*- A gente está plantando mais do que árvore. Está plantando respeito.*
+
+Narrador:
+*Pedra Branca, pela primeira vez em meses, respirava. E você começava a entender que luz demais, sem sombra, é cegueira.*`,
+    next: 'playerMonologue',
+    background: 'healing'
+  },
+  chapadaActions: {
+    id: 'chapadaActions',
+    type: 'story',
+    title: 'Firmar a Encosta',
+    content: `A chapada precisava de tempo, de raízes e de cuidado. Você inicia um replantio de vegetação nativa nas áreas inclinadas e constrói canais de drenagem com pedras locais. Um observatório comunitário é criado para vigiar a encosta.
+
+Jeferson (apontando para o riacho):
+*- Olha só... ela tá voltando a sorrir.*
+
+Narrador:
+*A chapada não gritou. Ela sussurrou. E você, finalmente, escutou.*`,
+    next: 'playerMonologue',
+    background: 'healing'
+  },
+  playerMonologue: {
+    id: 'playerMonologue',
+    type: 'story',
+    title: 'Entre Luz e Sombra',
+    content: `Dias depois, você caminha por uma trilha. O chão está rachado. Você para e fala consigo mesmo.
+
+*(Pensando): Seis meses atrás, eu acreditava que a luz bastava. Mas o sol não cura sozinho. Ele também queima. Eu acelerei. Ignorei os sinais. E quando a poeira subiu, quando o chão caiu... Eu vi. Senti. Mas já era tarde.*
+
+*(Pensando): E agora dizem que há uma mulher que lê a terra. Ela me espera. Sei que o que eu escolher agora não é sobre placas. É sobre gente. Sobre chão. Sobre futuro.*
+
+Você respira fundo e segue até a cabana.`,
+    next: (gender, terrain) => terrain === 'pedraBranca' ? 'pedraBrancaCartomante' : 'chapadaCartomante',
+    background: 'mystical'
   },
   pedraBrancaCartomante: {
     id: 'pedraBrancaCartomante',
     type: 'story',
-    title: 'Aquela que Lê a Terra',
-    content: `Você procura Mãe Zefa em sua cabana, cercada por mandacarus. O ar é seco, carregado de energia.
+    title: 'A Terra Fala por Ela',
+    content: `Você entra na cabana de Mãe Zefa. O ar é seco, carregado de energia.
 
 Mãe Zefa (sem abrir os olhos):
 *- Você trouxe luz demais. E não escutou a sombra. Pedra Branca está em desequilíbrio. E agora... você tem que escolher.*
 
-Ela aponta para três objetos: uma pedra rachada, uma garrafa com água turva, e uma folha seca. Ela descreve seus caminhos.`,
-    choices: [
-      { text: 'Amenizar os impactos e reconstruir', next: 'goodEnding' },
-      { text: 'Não mudar nada, deixar como está', next: 'tragicEnding' },
-      { text: 'Abandonar o parque', next: 'midEnding' }
-    ],
+Ela abre os olhos e descreve o que acontecerá em cada caminho.`,
+    next: 'finalChoicePedraBranca',
     background: 'mystical'
   },
   chapadaCartomante: {
     id: 'chapadaCartomante',
     type: 'story',
     title: 'A Encosta Tem Voz',
-    content: `Você encontra Dona Iraci em uma clareira. Ela está sentada sobre uma raiz exposta, com um bastão de madeira nas mãos.
+    content: `Você encontra Dona Iraci em uma clareira.
 
 Dona Iraci:
 *- Você trouxe pressa para um lugar que vive de tempo. A chapada está ferida. E você... tem três caminhos.*
 
-Ela desenha três linhas na terra com o bastão: uma reta, uma curva, e uma quebrada, e então descreve seus caminhos.`,
-    choices: [
-      { text: 'Amenizar os impactos e reconstruir', next: 'goodEnding' },
-      { text: 'Não mudar nada, deixar como está', next: 'tragicEnding' },
-      { text: 'Abandonar o parque', next: 'midEnding' }
-    ],
+Ela desenha três linhas na terra com um bastão e descreve o que acontecerá em cada caminho.
+*- A chapada não grita. Ela sussurra. E quem não escuta... escorrega.*`,
+    next: 'finalChoiceChapada',
     background: 'mystical'
+  },
+  finalChoicePedraBranca: {
+    id: 'finalChoicePedraBranca',
+    type: 'choice',
+    title: 'O Último Sol do Sertão',
+    content: 'Você está sozinho no mirante do parque. O chão ainda carrega marcas. A conversa com Mãe Zefa ecoa em sua mente. Você fecha os olhos, respira fundo. E escolhe.',
+    choices: [
+      { text: 'Amenizar os impactos ambientais', next: 'goodEndingPedraBranca' },
+      { text: 'Não acreditar e deixar como está', next: 'tragicEndingPedraBranca' },
+      { text: 'Ficar sem esperanças e abandonar', next: 'midEndingPedraBranca' }
+    ],
+    background: 'landscape'
+  },
+  finalChoiceChapada: {
+    id: 'finalChoiceChapada',
+    type: 'choice',
+    title: 'A Última Palavra da Encosta',
+    content: 'Você caminha pela trilha até o ponto mais alto da chapada. A conversa com Dona Iraci pulsa em sua memória. Você observa o parque, as casas, o riacho. E escolhe.',
+    choices: [
+      { text: 'Amenizar os impactos ambientais', next: 'goodEndingChapada' },
+      { text: 'Não acreditar e deixar como está', next: 'tragicEndingChapada' },
+      { text: 'Ficar sem esperanças e abandonar', next: 'midEndingChapada' }
+    ],
+    background: 'landscape'
   },
   perfectEnding: {
     id: 'perfectEnding',
@@ -336,37 +410,82 @@ Ela desenha três linhas na terra com o bastão: uma reta, uma curva, e uma queb
 A luz que você trouxe não queima - *ela cura*. O projeto floresceu porque você parou para ouvir.`,
     background: 'paradise'
   },
-  goodEnding: {
-    id: 'goodEnding',
+  goodEndingPedraBranca: {
+    id: 'goodEndingPedraBranca',
     type: 'ending',
     title: 'FINAL BOM',
     content: `Você convoca a comunidade. Barreiras vegetais são ampliadas. Sistemas de reuso de água são instalados. O parque é redesenhado para coexistir com a terra.
 
+Dona Lúcia (com lágrimas nos olhos):
 *- Você não só trouxe luz. Você trouxe cuidado.*
 
-A terra foi curada. O sol foi domado. E você... virou guardião da terra.`,
+Narrador:
+*Pedra Branca floresceu. O sol foi domado. A poeira virou sombra fresca. E você... virou guardião da terra.*`,
     background: 'growth'
   },
-  tragicEnding: {
-    id: 'tragicEnding',
+  tragicEndingPedraBranca: {
+    id: 'tragicEndingPedraBranca',
     type: 'ending',
     title: 'FINAL TRÁGICO',
-    content: `Você ignora os alertas. O parque continua a operar. A poeira se intensifica, a encosta cede novamente. A cidade começa a esvaziar. O parque é interditado.
+    content: `Você ignora os alertas. O parque continua a operar. A poeira se intensifica. Os poços secam. A cidade começa a esvaziar. O parque é interditado por contaminação.
 
+Dona Lúcia (em voz baixa):
 *- Você viu. Você sabia. Mas não escutou.*
 
-A terra virou ruína. A luz que prometia... destruiu. E você... virou lembrança amarga.`,
+Narrador:
+*Pedra Branca virou ruína. A luz que prometia... destruiu. E você... virou lembrança amarga.*`,
     background: 'desolation'
   },
-  midEnding: {
-    id: 'midEnding',
+  midEndingPedraBranca: {
+    id: 'midEndingPedraBranca',
     type: 'ending',
     title: 'FINAL MEIO TERMO',
-    content: `Você desativa o parque. A comunidade perde investimentos, mas a terra começa a se recuperar lentamente. O projeto é encerrado.
+    content: `Você desativa o parque. A comunidade perde investimentos. A terra começa a se recuperar lentamente. O projeto é encerrado.
 
+Dona Lúcia:
 *- Você não feriu mais. Mas também não curou.*
 
-A natureza sobreviveu. Mas o que poderia ter sido... nunca será.`,
+Narrador:
+*Pedra Branca sobreviveu. Mas o que poderia ter sido... nunca será.*`,
+    background: 'neutral'
+  },
+  goodEndingChapada: {
+    id: 'goodEndingChapada',
+    type: 'ending',
+    title: 'FINAL BOM',
+    content: `Você lidera mutirões de reflorestamento. Barreiras naturais são reforçadas. Trilhas ecológicas são criadas. O parque se transforma em modelo de regeneração.
+
+Jeferson (sorrindo):
+*- Você não virou as costas. E a chapada... agradeceu.*
+
+Narrador:
+*A luz foi respeitada. A sombra foi acolhida. E você... virou exemplo.*`,
+    background: 'growth'
+  },
+  tragicEndingChapada: {
+    id: 'tragicEndingChapada',
+    type: 'ending',
+    title: 'FINAL TRÁGICO',
+    content: `Você mantém o parque funcionando. Novos deslizamentos ocorrem. O riacho é contaminado. A comunidade é evacuada. O parque é interditado.
+
+Jeferson (revoltado):
+*- Você viu. Você sabia. E mesmo assim... deixou cair.*
+
+Narrador:
+*A chapada virou cicatriz. E você... virou silêncio.*`,
+    background: 'desolation'
+  },
+  midEndingChapada: {
+    id: 'midEndingChapada',
+    type: 'ending',
+    title: 'FINAL MEIO TERMO',
+    content: `Você desativa o parque. A comunidade perde apoio. A natureza começa a se recompor. O projeto é encerrado. O terreno vira reserva.
+
+Jeferson:
+*- Você não destruiu mais. Mas também não construiu.*
+
+Narrador:
+*A chapada sobreviveu. Mas o sonho... se perdeu.*`,
     background: 'neutral'
   },
   gameOver: {
@@ -379,7 +498,7 @@ A natureza sobreviveu. Mas o que poderia ter sido... nunca será.`,
   gameOverMid: {
     id: 'gameOverMid',
     type: 'ending',
-    title: 'FINAL MEIO TERMO',
+    title: 'FIM DE JOGO',
     content: `Você abandonou o projeto diante do desastre. A terra vai se curar sozinha, mas vai demorar. O parque virou ruína e a comunidade murchou. Você carrega o peso do que poderia ter sido.`,
     background: 'ending'
   },
@@ -389,7 +508,7 @@ A natureza sobreviveu. Mas o que poderia ter sido... nunca será.`,
     title: 'Solar Quest - Créditos',
     content: {
       orientador: 'Renato Nunes Ramalho',
-      alunos: 'Lucas Nadison, Mariana Carvalho, Rikelmy Cavalcante – 3° ano "G" EREMWAL 2025',
+      alunos: 'Lucas Nadson, Mariana Vitória, Rikelmy – 3° ano "G" EREMWAL 2025',
       colaboradores: [
         'Cefras Mandú, Robson Luan – Eng. de Computação IFPB - CG',
         'Francisco Ferreira - UniFAP - CE'
@@ -421,7 +540,6 @@ const SolarQuest = () => {
   const [playerName, setPlayerName] = useState('');
   const [playerGender, setPlayerGender] = useState('');
   const [terrain, setTerrain] = useState('');
-  const [gameState, setGameState] = useState({});
   const [inputName, setInputName] = useState('');
 
   const resetGame = () => {
@@ -429,22 +547,35 @@ const SolarQuest = () => {
     setPlayerName('');
     setPlayerGender('');
     setTerrain('');
-    setGameState({});
     setInputName('');
   };
 
+  // FUNÇÕES DE NAVEGAÇÃO ATUALIZADAS para lidar com lógica condicional
   const handleChoice = (choice) => {
+    // Atualiza o estado primeiro, se necessário
     if (choice.gender) {
       setPlayerGender(choice.gender);
     }
     if (choice.terrain) {
       setTerrain(choice.terrain);
     }
-    setCurrentScene(choice.next);
+
+    let nextSceneId = choice.next;
+    // Verifica se 'next' é uma função para resolver a próxima cena
+    if (typeof nextSceneId === 'function') {
+      nextSceneId = nextSceneId(playerGender, terrain);
+    }
+    setCurrentScene(nextSceneId);
   };
 
   const handleNext = (nextScene) => {
-    setCurrentScene(nextScene);
+    let nextSceneId = nextScene;
+    // Verifica se 'next' é uma função para resolver a próxima cena
+    if (typeof nextSceneId === 'function') {
+      // Passa o estado atual para a função determinar a rota
+      nextSceneId = nextSceneId(playerGender, terrain);
+    }
+    setCurrentScene(nextSceneId);
   };
 
   const handleNameSubmit = () => {
@@ -458,17 +589,17 @@ const SolarQuest = () => {
   const backgroundStyle = backgrounds[scene?.background || 'sertao'];
 
   const replacePlayerName = (text) => {
-    return text ? text.replace(/\[Nome.*?\]/g, playerName) : '';
+    return text ? text.replace(/\[Nome]/g, playerName) : '';
   };
 
   if (!scene) {
-    return <div>Erro: Cena não encontrada</div>;
+    return <div>Erro: Cena não encontrada - {currentScene}</div>;
   }
 
   return (
     <div className="min-h-screen flex items-center justify-center p-4"
          style={{ background: backgroundStyle }}>
-
+      
       <motion.div
         className="absolute inset-0 opacity-20"
         animate={{
@@ -485,7 +616,7 @@ const SolarQuest = () => {
       </motion.div>
 
       <div className="relative z-10 w-full max-w-4xl">
-
+        
         {playerName && currentScene !== 'intro' && (
            <motion.div
             className="mb-6 text-center"
@@ -508,7 +639,7 @@ const SolarQuest = () => {
             transition={{ duration: 0.6 }}
             className="bg-white/95 backdrop-blur-sm rounded-3xl shadow-2xl overflow-hidden"
           >
-
+            
             {scene.title && (
               <div className="bg-gradient-to-r from-green-600 to-yellow-600 text-white p-6 text-center">
                 <motion.h1
@@ -524,7 +655,7 @@ const SolarQuest = () => {
             )}
 
             <div className="p-8">
-
+              
               {scene.type === 'input' && (
                 <motion.div
                   className="text-center space-y-6"
@@ -538,10 +669,10 @@ const SolarQuest = () => {
                   >
                     <Sun className="w-16 h-16 text-yellow-500 mx-auto mb-4" />
                   </motion.div>
-
+                  
                   <h2 className="text-4xl font-bold text-gray-800 mb-4">Solar Quest</h2>
                   <p className="text-lg text-gray-600 mb-6">{scene.content}</p>
-
+                  
                   <div className="flex gap-3 max-w-md mx-auto">
                     <input
                       type="text"
@@ -563,7 +694,6 @@ const SolarQuest = () => {
                 </motion.div>
               )}
 
-              {/* PASSO 3: Bloco de renderização ATUALIZADO para usar ReactMarkdown */}
               {(scene.type === 'story' || scene.type === 'choice') && (
                 <motion.div
                   className="space-y-6"
@@ -625,7 +755,6 @@ const SolarQuest = () => {
                 </motion.div>
               )}
 
-              {/* PASSO 3 (continuação): Bloco de renderização de FINAIS ATUALIZADO */}
               {scene.type === 'ending' && (
                 <motion.div
                   className="text-center space-y-6"
@@ -645,12 +774,12 @@ const SolarQuest = () => {
                     {scene.title.includes('TRÁGICO') && <Zap className="w-20 h-20 text-red-500 mx-auto mb-4" />}
                     {(scene.title.includes('MEIO TERMO') || scene.title.includes('FIM')) && <Mountain className="w-20 h-20 text-gray-500 mx-auto mb-4" />}
                   </motion.div>
-
+                  
                   <h2 className="text-3xl font-bold text-gray-800 mb-4">{scene.title}</h2>
-
+                  
                   <div className="prose prose-lg max-w-none text-gray-700">
                     <ReactMarkdown>
-                      {scene.content}
+                      {replacePlayerName(scene.content)}
                     </ReactMarkdown>
                   </div>
 
@@ -668,7 +797,7 @@ const SolarQuest = () => {
                     >
                       Ver Créditos
                     </motion.button>
-
+                    
                     <motion.button
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
@@ -695,9 +824,9 @@ const SolarQuest = () => {
                   >
                     <Sun className="w-16 h-16 text-yellow-500 mx-auto mb-6" />
                   </motion.div>
-
+                  
                   <h2 className="text-4xl font-bold text-gray-800 mb-8">Solar Quest</h2>
-
+                  
                   <div className="space-y-6 text-lg text-gray-700">
                     <motion.div
                       initial={{ x: -50, opacity: 0 }}
@@ -708,7 +837,7 @@ const SolarQuest = () => {
                       <h3 className="font-bold text-xl mb-2">Orientador</h3>
                       <p>{scene.content.orientador}</p>
                     </motion.div>
-
+                    
                     <motion.div
                       initial={{ x: 50, opacity: 0 }}
                       animate={{ x: 0, opacity: 1 }}
@@ -718,7 +847,7 @@ const SolarQuest = () => {
                       <h3 className="font-bold text-xl mb-2">Alunos</h3>
                       <p>{scene.content.alunos}</p>
                     </motion.div>
-
+                    
                     <motion.div
                       initial={{ x: -50, opacity: 0 }}
                       animate={{ x: 0, opacity: 1 }}
