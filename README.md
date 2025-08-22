@@ -127,6 +127,7 @@ solar-quest/
 ├── 📂 public/
 │   ├── 📄 index.html          # Template HTML
 │   └── 🖼️ favicon.ico         # Ícone da aba
+├── 📂 screenshots/            # Imagens do jogo
 ├── 📂 src/
 │   ├── 📄 App.js              # Componente principal do jogo
 │   ├── 📄 index.js            # Entry point React
