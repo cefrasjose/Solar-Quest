@@ -244,8 +244,8 @@ npx serve -s build
     <td align="center">
       <strong>👨‍🎓 Alunos - 3° "G" 2025 EREMWAL</strong><br>
       <strong>Lucas Nadson</strong><br>
-      <strong>Mariana Vitória</strong><br>
-      <strong>Rikelmy</strong><br>
+      <strong>Mariana Carvalho</strong><br>
+      <strong>Rikelmy Cavalcante</strong><br>
       <em>Desenvolvimento e pesquisa</em>
     </td>
   </tr>
