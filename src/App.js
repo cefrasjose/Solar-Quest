@@ -517,7 +517,7 @@ Narrador:
     title: 'Solar Quest - Créditos',
     content: {
       orientador: 'Renato Nunes Ramalho',
-      alunos: 'Lucas Nadisson, Mariana Carvalho, Rikelmy Cavalcante– 3° ano "G" EREMWAL 2025',
+      alunos: 'Lucas Nadisson, Mariana Carvalho, Rikelmy Cavalcante – 3° ano "G" EREMWAL 2025',
       colaboradores: [
         'Cefras Mandú, Robson Luan – Eng. de Computação IFPB - CG',
         'Francisco Ferreira - UniFAP - CE'
