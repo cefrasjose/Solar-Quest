@@ -83,7 +83,7 @@ graph TD
     D --> E{Aceitar Projeto?}
     E -->|Sim| F[Escolha do Terreno]
     E -->|Não| G[Fim - Desistência]
-    F --> H[Pedra Branca] 
+    F --> H[Pedra Branca]
     F --> I[Chapada do Sol Nascente]
     H --> J{Acelerar ou Reavaliar?}
     I --> J
@@ -91,7 +91,6 @@ graph TD
     J --> L[Final Bom 🌱]
     J --> M[Final Trágico ⚡]
     J --> N[Final Meio Termo 🏜️]
-```
 
 ---
 
