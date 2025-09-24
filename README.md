@@ -1,19 +1,19 @@
 # 🌞 Solar Quest - Jogo Educativo Interativo
 
 <div align="center">
-  
-  ![Solar Quest Banner](https://img.shields.io/badge/Solar%20Quest-Energia%20Sustentável-green?style=for-the-badge&logo=sun&logoColor=yellow)
-  
-  **Um jogo interativo sobre energia sustentável e impacto ambiental no sertão nordestino**
-  
-  [![Vercel Status](https://vercelbadge.vercel.app/api/SEU-USUARIO/solar-quest)](https://solar-quest.vercel.app/)
-  [![Deploy Status](https://img.shields.io/github/deployments/SEU-USUARIO/solar-quest/github-pages?style=flat-square&label=Deploy)](https://vercel.com/cefras54-1783s-projects)
-  [![License](https://img.shields.io/github/license/cefrasjose/solar-quest?style=flat-square)](LICENSE)
-  [![React](https://img.shields.io/badge/React-18+-blue?style=flat-square&logo=react)](https://reactjs.org/)
-  [![Tailwind](https://img.shields.io/badge/Tailwind-3+-06B6D4?style=flat-square&logo=tailwindcss)](https://tailwindcss.com/)
-  
-  ### [🎮 JOGAR AGORA](https://solar-quest.vercel.app/)
-  
+  
+  ![Solar Quest Banner](https://img.shields.io/badge/Solar%20Quest-Energia%20Sustentável-green?style=for-the-badge&logo=sun&logoColor=yellow)
+  
+  **Um jogo interativo sobre energia sustentável e impacto ambiental no sertão nordestino**
+  
+  [![Vercel Status](https://vercelbadge.vercel.app/api/SEU-USUARIO/solar-quest)](https://solar-quest.vercel.app/)
+  [![Deploy Status](https://img.shields.io/github/deployments/SEU-USUARIO/solar-quest/github-pages?style=flat-square&label=Deploy)](https://vercel.com/cefras54-1783s-projects)
+  [![License](https://img.shields.io/github/license/cefrasjose/solar-quest?style=flat-square)](LICENSE)
+  [![React](https://img.shields.io/badge/React-18+-blue?style=flat-square&logo=react)](https://reactjs.org/)
+  [![Tailwind](https://img.shields.io/badge/Tailwind-3+-06B6D4?style=flat-square&logo=tailwindcss)](https://tailwindcss.com/)
+  
+  ### [🎮 JOGAR AGORA](https://solar-quest.vercel.app/)
+  
 </div>
 
 
@@ -36,14 +36,14 @@ O jogo apresenta uma narrativa ramificada onde o jogador toma decisões crítica
 ## 📸 Prints do Jogo
 
 <p align="center">
-  <img src="./screenshots/Captura de tela 2025-08-21 042045.png" alt="Tela Inicial" width="45%"/>
-  <img src="./screenshots/Captura de tela 2025-08-21 042711.png" alt="Sistema de Escolhas" width="45%"/>
-  <img src="./screenshots/Captura de tela 2025-08-21 163909.png" alt="Sistema de Escolhas" width="45%"/>
-  <img src="./screenshots/Captura de tela 2025-08-21 163947.png" alt="Sistema de Escolhas" width="45%"/>
+  <img src="./screenshots/Captura de tela 2025-08-21 042045.png" alt="Tela Inicial" width="45%"/>
+  <img src="./screenshots/Captura de tela 2025-08-21 042711.png" alt="Sistema de Escolhas" width="45%"/>
+  <img src="./screenshots/Captura de tela 2025-08-21 163909.png" alt="Sistema de Escolhas" width="45%"/>
+  <img src="./screenshots/Captura de tela 2025-08-21 163947.png" alt="Sistema de Escolhas" width="45%"/>
 </p>
 
 <p align="center">
-  <img src="./screenshots/Captura de tela 2025-08-21 164246.png" alt="Final do Jogo" width="70%"/>
+  <img src="./screenshots/Captura de tela 2025-08-21 164246.png" alt="Final do Jogo" width="70%"/>
 </p>
 
 ---
@@ -91,95 +91,95 @@ graph TD
     J --> L[Final Bom 🌱]
     J --> M[Final Trágico ⚡]
     J --> N[Final Meio Termo 🏜️]
+🛠️ Tecnologias Utilizadas
+🔧 Frontend
+React.js 18+ - Framework principal
 
----
+JavaScript ES6+ - Linguagem de programação
 
-## 🛠️ Tecnologias Utilizadas
+HTML5 & CSS3 - Estrutura e estilização
 
-### 🔧 **Frontend**
-- **React.js 18+** - Framework principal
-- **JavaScript ES6+** - Linguagem de programação
-- **HTML5 & CSS3** - Estrutura e estilização
+🎨 Design & UI/UX
+Tailwind CSS - Framework de estilização
 
-### 🎨 **Design & UI/UX**
-- **Tailwind CSS** - Framework de estilização
-- **Framer Motion** - Animações e transições
-- **Lucide React** - Biblioteca de ícones
-- **Design Solarpunk** - Estética sustentável minimalista
+Framer Motion - Animações e transições
 
-### ⚙️ **Funcionalidades**
-- **Local Storage API** - Salvamento de progresso
-- **Responsive Design** - Compatibilidade mobile/desktop
-- **PWA Ready** - Experiência app-like
-- **Accessibility** - Contraste e navegação otimizados
+Lucide React - Biblioteca de ícones
 
-### 🚀 **Deploy & Hosting**
-- **Vercel** - Hospedagem gratuita
-- **Vite/Create React App** - Bundling e otimização
+Design Solarpunk - Estética sustentável minimalista
 
----
+⚙️ Funcionalidades
+Local Storage API - Salvamento de progresso
 
-## 📁 Estrutura do Projeto
+Responsive Design - Compatibilidade mobile/desktop
 
-```
+PWA Ready - Experiência app-like
+
+Accessibility - Contraste e navegação otimizados
+
+🚀 Deploy & Hosting
+Vercel - Hospedagem gratuita
+
+Vite/Create React App - Bundling e otimização
+
+📁 Estrutura do Projeto
 solar-quest/
 ├── 📂 public/
-│   ├── 📄 index.html          # Template HTML
-│   └── 🖼️ favicon.ico         # Ícone da aba
-├── 📂 screenshots/            # Imagens do jogo
+│   ├── 📄 index.html          # Template HTML
+│   └── 🖼️ favicon.ico         # Ícone da aba
+├── 📂 screenshots/            # Imagens do jogo
 ├── 📂 src/
-│   ├── 📄 App.js              # Componente principal do jogo
-│   ├── 📄 index.js            # Entry point React
-│   └── 📄 index.css           # Estilos globais
-├── 📄 package.json            # Dependências do projeto
-├── 📄 README.md              # Documentação
-└── 📄 LICENSE                # Licença do projeto
-```
+│   ├── 📄 App.js              # Componente principal do jogo
+│   ├── 📄 index.js            # Entry point React
+│   └── 📄 index.css           # Estilos globais
+├── 📄 package.json            # Dependências do projeto
+├── 📄 README.md              # Documentação
+└── 📄 LICENSE                # Licença do projeto
+🎭 Personagens e Cenários
+👤 Protagonistas
+Personagem Masculino: Técnico em energia, filho do sertão
 
----
+Personagem Feminino: Engenheira ambiental, defensora da comunidade
 
-## 🎭 Personagens e Cenários
+🏞️ Cenários
+Pedra Branca (PE): Terreno árido com alto potencial solar
 
-### 👤 **Protagonistas**
-- **Personagem Masculino**: Técnico em energia, filho do sertão
-- **Personagem Feminino**: Engenheira ambiental, defensora da comunidade
+Chapada do Sol Nascente (DF): Área elevada com riscos geológicos
 
-### 🏞️ **Cenários**
-- **Pedra Branca (PE)**: Terreno árido com alto potencial solar
-- **Chapada do Sol Nascente (DF)**: Área elevada com riscos geológicos
+👥 NPCs Importantes
+Dona Lúcia: Representante comunitária de Pedra Branca
 
-### 👥 **NPCs Importantes**
-- **Dona Lúcia**: Representante comunitária de Pedra Branca
-- **Jeferson Silva**: Líder da comunidade Sol Nascente
-- **Carla Fontes**: Investidora pragmática
-- **Carlos Lima**: Representante da ONG Verde Viva
-- **Ministro Elias Rocha**: Político local
-- **Mãe Zefa / Dona Iraci**: Cartomantes que leem a terra
+Jeferson Silva: Líder da comunidade Sol Nascente
 
----
+Carla Fontes: Investidora pragmática
 
-## 🎯 Finais Possíveis
+Carlos Lima: Representante da ONG Verde Viva
 
-| Final | Condição | Resultado |
-|-------|----------|-----------|
-| 🌞 **Perfeito** | Reavaliou o impacto e ouviu a comunidade | Projeto modelo internacional |
-| 🌱 **Bom** | Acelerou mas reverteu após cartomante | Reconstrução sustentável |
-| ⚡ **Trágico** | Acelerou e ignorou avisos | Desastre ambiental |
-| 🏜️ **Meio Termo** | Abandonou após problemas | Desativação e recuperação lenta |
+Ministro Elias Rocha: Político local
 
----
+Mãe Zefa / Dona Iraci: Cartomantes que leem a terra
 
-## 🚀 Instalação e Desenvolvimento
+🎯 Finais Possíveis
+Final	Condição	Resultado
+🌞 Perfeito	Reavaliou o impacto e ouviu a comunidade	Projeto modelo internacional
+🌱 Bom	Acelerou mas reverteu após cartomante	Reconstrução sustentável
+⚡ Trágico	Acelerou e ignorou avisos	Desastre ambiental
+🏜️ Meio Termo	Abandonou após problemas	Desativação e recuperação lenta
 
-### 📋 **Pré-requisitos**
-- Node.js 16+ 
-- NPM ou Yarn
-- Git
+Exportar para as Planilhas
+🚀 Instalação e Desenvolvimento
+📋 Pré-requisitos
+Node.js 16+ 
 
-### 🔧 **Instalação Local**
-```bash
+NPM ou Yarn
+
+Git
+
+🔧 Instalação Local
+Bash
+
 # Clone o repositório
-git clone https://github.com/cefrasjose/solar-quest.git
+git clone [https://github.com/cefrasjose/solar-quest.git](https://github.com/cefrasjose/solar-quest.git)
 
 # Entre na pasta
 cd solar-quest
@@ -191,144 +191,181 @@ npm install
 npm start
 
 # Acesse http://localhost:3000
-```
+🏗️ Build de Produção
+Bash
 
-### 🏗️ **Build de Produção**
-```bash
 # Gerar build otimizado
 npm run build
 
 # Testar build localmente
 npx serve -s build
-```
+🤝 Contribuições
+📌 Como Contribuir
+🍴 Fork o projeto
 
----
+🌿 Crie uma branch (git checkout -b feature/nova-funcionalidade)
 
-## 🤝 Contribuições
+💾 Commit suas mudanças (git commit -m 'Adiciona nova funcionalidade')
 
-### 📌 **Como Contribuir**
-1. 🍴 **Fork** o projeto
-2. 🌿 **Crie uma branch** (`git checkout -b feature/nova-funcionalidade`)
-3. 💾 **Commit** suas mudanças (`git commit -m 'Adiciona nova funcionalidade'`)
-4. 📤 **Push** para a branch (`git push origin feature/nova-funcionalidade`)
-5. 🔄 **Abra um Pull Request**
+📤 Push para a branch (git push origin feature/nova-funcionalidade)
 
-### 🐛 **Reportar Bugs**
-- Use as [Issues do GitHub](https://github.com/cefrasjose/solar-quest/issues)
-- Descreva o problema detalhadamente
-- Inclua steps para reproduzir
-- Adicione screenshots se necessário
+🔄 Abra um Pull Request
 
-### 💡 **Sugerir Melhorias**
-- Novas funcionalidades
-- Melhorias de UX/UI  
-- Otimizações de performance
-- Correções de acessibilidade
+🐛 Reportar Bugs
+Use as Issues do GitHub
 
----
+Descreva o problema detalhadamente
 
-## 👥 Equipe de Desenvolvimento
+Inclua steps para reproduzir
 
+Adicione screenshots se necessário
+
+💡 Sugerir Melhorias
+Novas funcionalidades
+
+Melhorias de UX/UI  
+
+Otimizações de performance
+
+Correções de acessibilidade
+
+👥 Equipe de Desenvolvimento
 <table>
-  <tr>
-    <td align="center">
-      <strong>🎓 Professor Orientador</strong><br>
-      <strong>Renato Nunes de Ramalho</strong><br>
-      <em>Orientação acadêmica</em>
-    </td>
-  </tr>
+  <tr>
+    <td align="center">
+      <strong>🎓 Professor Orientador</strong>
+
+
+
+      <strong>Renato Nunes de Ramalho</strong>
+
+
+
+      <em>Orientação acadêmica</em>
+    </td>
+  </tr>
 </table>
 
 <table>
-  <tr>
-    <td align="center">
-      <strong>👨‍🎓 Alunos - 3° "G" 2025 EREMWAL</strong><br>
-      <strong>Lucas Nadisson</strong><br>
-      <strong>Mariana Carvalho</strong><br>
-      <strong>Rikelmy Cavalcante</strong><br>
-      <em>Desenvolvimento e pesquisa</em>
-    </td>
-  </tr>
+  <tr>
+    <td align="center">
+      <strong>👨‍🎓 Alunos - 3° "G" 2025 EREMWAL</strong>
+
+
+
+      <strong>Lucas Nadisson</strong>
+
+
+
+      <strong>Mariana Carvalho</strong>
+
+
+
+      <strong>Rikelmy Cavalcante</strong>
+
+
+
+      <em>Desenvolvimento e pesquisa</em>
+    </td>
+  </tr>
 </table>
 
 <table>
-  <tr>
-    <td align="center">
-      <strong>👨‍💻 Colaboradores</strong><br>
-      <strong>Cefras Mandú</strong><br>
-      <strong>Robson Luan</strong><br>
-      <em>Eng. de Computação IFPB-CG</em><br>
-      <strong>Francisco Ferreira</strong><br>
-      <em>S.I UNIFAP-CE</em><br>
-      <em>Desenvolvimento técnico</em>
-    </td>
-  </tr>
+  <tr>
+    <td align="center">
+      <strong>👨‍💻 Colaboradores</strong>
+
+
+
+      <strong>Cefras Mandú</strong>
+
+
+
+      <strong>Robson Luan</strong>
+
+
+
+      <em>Eng. de Computação IFPB-CG</em>
+
+
+
+      <strong>Francisco Ferreira</strong>
+
+
+
+      <em>S.I UNIFAP-CE</em>
+
+
+
+      <em>Desenvolvimento técnico</em>
+    </td>
+  </tr>
 </table>
 
----
+📊 Status do Projeto
+✅ Narrativa completa implementada
 
-## 📊 Status do Projeto
+✅ Sistema de escolhas funcionando
 
-- ✅ **Narrativa completa** implementada
-- ✅ **Sistema de escolhas** funcionando
-- ✅ **Múltiplos finais** disponíveis
-- ✅ **Save/Load** automático
-- ✅ **Design responsivo** mobile/desktop
-- ✅ **Animações** e transições
-- ✅ **Deploy automatizado** GitHub Pages
+✅ Múltiplos finais disponíveis
 
-### 🔮 **Próximas Funcionalidades**
-- 🔊 Trilha sonora ambiente
-- 🖼️ Ilustrações customizadas dos cenários
-- 📈 Sistema de estatísticas de jogadas
-- 🌐 Suporte a múltiplos idiomas
-- 📱 Versão PWA offline
+✅ Save/Load automático
 
----
+✅ Design responsivo mobile/desktop
 
-## 📄 Licença
+✅ Animações e transições
 
-Este projeto está licenciado sob a **MIT License** - veja o arquivo [LICENSE](LICENSE) para detalhes.
+✅ Deploy automatizado GitHub Pages
 
-```
+🔮 Próximas Funcionalidades
+🔊 Trilha sonora ambiente
+
+🖼️ Ilustrações customizadas dos cenários
+
+📈 Sistema de estatísticas de jogadas
+
+🌐 Suporte a múltiplos idiomas
+
+📱 Versão PWA offline
+
+📄 Licença
+Este projeto está licenciado sob a MIT License - veja o arquivo LICENSE para detalhes.
+
 MIT License - Uso educacional e não comercial incentivado
 Copyright (c) 2024 Equipe Solar Quest EREMWAL
-```
+🌐 Links Úteis
+🎮 Jogo Online: https://solar-quest.vercel.app
 
----
+📊 Repositório: https://github.com/cefrasjose/solar-quest
 
-## 🌐 Links Úteis
+🚀 Deploy Status: GitHub Actions
 
-- 🎮 **Jogo Online**: [https://solar-quest.vercel.app](https://solar-quest.vercel.app)
-- 📊 **Repositório**: [https://github.com/cefrasjose/solar-quest](https://github.com/cefrasjose/solar-quest)
-- 🚀 **Deploy Status**: [GitHub Actions](https://github.com/cefrasjose/solar-quest/actions)
-- 📝 **Issues**: [Reportar Problemas](https://github.com/cefrasjose/solar-quest/issues)
-- 💬 **Discussões**: [GitHub Discussions](https://github.com/cefrasjose/solar-quest/discussions)
+📝 Issues: Reportar Problemas
 
----
+💬 Discussões: GitHub Discussions
 
-## 📞 Contato
-
+📞 Contato
 Para dúvidas acadêmicas ou colaborações:
 
-- 📧 **Email institucional**: [cefras.jose@academico.ifpb.edu.br](mailto:cefras.jose@academico.ifpb.edu.br)
-- 🏫 **EREMWAL** - Escola de Referência em Ensino Médio Dr. Walmy Campos Bezerra
-- 🎓 **IFPB** - Instituto Federal da Paraíba Campus Campina Grande
-- 🎓 **UNIFAP-CE** - Centro Universitario Paraíso
+📧 Email institucional: cefras.jose@academico.ifpb.edu.br
 
----
+🏫 EREMWAL - Escola de Referência em Ensino Médio Dr. Walmy Campos Bezerra
+
+🎓 IFPB - Instituto Federal da Paraíba Campus Campina Grande
+
+🎓 UNIFAP-CE - Centro Universitario Paraíso
 
 <div align="center">
-  
-  ### 🌱 Feito com 💚 pela equipe EREMWAL e colaboração dos estudantes do IFPB-CG e UniFAP-CE
-[@cefrasjose](https://github.com/cefrasjose) [@robsonluan95](https://github.com/robsonluan95) [@frFranciscoo](https://github.com/frFranciscoo) 
-  
-  **"Construir um futuro exige mais do que luz, exige consciência."**
-  
-  *- Solar Quest*
-  
-  ---
-  
-  ⭐ **Gostou do projeto? Deixe uma estrela!** ⭐
-  
+  
+  ### 🌱 Feito com 💚 pela equipe EREMWAL e colaboração dos estudantes do IFPB-CG e UniFAP-CE
+@cefrasjose @robsonluan95 @frFranciscoo 
+  
+  "Construir um futuro exige mais do que luz, exige consciência."
+  
+  - Solar Quest
+  
+  ---
+  
+  ⭐ Gostou do projeto? Deixe uma estrela! ⭐
+  
 </div>
