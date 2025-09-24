@@ -250,7 +250,6 @@ npx serve -s build
     </td>
   </tr>
 </table>
-
 <table>
   <tr>
     <td align="center">
@@ -262,7 +261,6 @@ npx serve -s build
     </td>
   </tr>
 </table>
-
 <table>
   <tr>
     <td align="center">
@@ -334,8 +332,6 @@ Para dúvidas acadêmicas ou colaborações:
   **"Construir um futuro exige mais do que luz, exige consciência."**
 
   *- Solar Quest*
-  
-  ---
   
   ⭐ **Gostou do projeto? Deixe uma estrela!** ⭐
 </div>
